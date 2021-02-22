@@ -1,0 +1,54 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.XR.ARFoundation;
+
+public class CubeManager_old : MonoBehaviour
+{
+    public ARRaycastManager arRaycastManager;
+    public GameObject cubePrefab;
+
+    private List<ARRaycastHit> arRaycastHits = new List<ARRaycastHit>();
+
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.touchCount >0)    {
+            var touch = Input.GetTouch(0);
+            if(touch.phase == TouchPhase.Ended){
+                if(Input.touchCount == 1){
+                    if (arRaycastManager.Raycast(touch.position, arRaycastHits))
+                    {
+                        var pose = arRaycastHits[0].pose;
+                        CreateCube(pose.position);
+                        return;
+                    }
+                    Ray rayCast = Camera.main.ScreenPointToRay(touch.position);
+                    if(Physics.Raycast(rayCast, out RaycastHit hit))
+                    {
+                        if (hit.collider.tag == "CubeObject")
+                        {
+                            DeleteCube(hit.collider.gameObject);
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    private void CreateCube(Vector3 position)
+    {
+        Instantiate(cubePrefab, position, Quaternion.identity);
+    }
+
+    private void DeleteCube(GameObject cubeObject)
+    {
+        Destroy(cubeObject);
+    }
+}
