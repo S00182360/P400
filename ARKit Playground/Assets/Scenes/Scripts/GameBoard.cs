@@ -21,17 +21,15 @@ public class GameBoard : MonoBehaviour
 
     private void DrawBoard(int w, int l)
     {
-        Vector3 widthVe = Vector3.right * w;
+        //Vector3 widthVe = Vector3.right * w;
         Vector3 heightVe = Vector3.forward * l;
 
         for (int i = 0; i < w; i++)
         {
             Vector3 start = Vector3.forward * i;
             Vector3 startWidth;
-
-            //Debug for now
             //TODO: create tile generation method
-            Debug.DrawLine(start, start + widthVe);
+            //Debug.DrawLine(start, start + widthVe);
 
             //Instantiate(boardTile, start + widthVe, Quaternion.identity);
 
@@ -39,13 +37,9 @@ public class GameBoard : MonoBehaviour
             {
                 startWidth = Vector3.right * j;
                 startWidth += start;
-                Debug.DrawLine(start, start + heightVe);
                 Instantiate(boardTile, startWidth + heightVe, Quaternion.identity);
-
             }
-
         }
-
 
     }
 
