@@ -38,6 +38,7 @@
 	</assembly>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="CubeManager" preserve="nothing"/>
+		<type fullname="GridManager" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.XR.ARFoundation">
 		<type fullname="UnityEngine.XR.ARFoundation.ARCameraBackground" preserve="nothing"/>

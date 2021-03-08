@@ -2,8 +2,11 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CubeManager
+    - GridManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.XR.ARCore.Editor.dll:
+    - UnityEditor.XR.ARCore.ARCoreSettings
     Unity.XR.ARFoundation.dll:
     - UnityEngine.XR.ARFoundation.ARCameraBackground
     - UnityEngine.XR.ARFoundation.ARCameraManager
@@ -30,7 +33,7 @@ ScriptsOnlyBuild:
     UnityEngine.SpatialTracking.dll:
     - UnityEngine.SpatialTracking.TrackedPoseDriver
   sceneClasses:
-    Assets/Sceb.unity:
+    Assets/Scenes/Sceb.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -58,27 +61,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11566}
+      Script: {instanceID: 11562}
     - Class: 114
-      Script: {instanceID: 11724}
+      Script: {instanceID: 11720}
     - Class: 114
-      Script: {instanceID: 11932}
+      Script: {instanceID: 11928}
     - Class: 114
-      Script: {instanceID: 11966}
+      Script: {instanceID: 11962}
     - Class: 114
-      Script: {instanceID: 12242}
+      Script: {instanceID: 12238}
     - Class: 114
-      Script: {instanceID: 12770}
+      Script: {instanceID: 12768}
     - Class: 114
-      Script: {instanceID: 12816}
+      Script: {instanceID: 12814}
     - Class: 114
-      Script: {instanceID: 13028}
+      Script: {instanceID: 13026}
     - Class: 114
-      Script: {instanceID: 13188}
+      Script: {instanceID: 13186}
     - Class: 114
-      Script: {instanceID: 13370}
+      Script: {instanceID: 13368}
     - Class: 114
-      Script: {instanceID: 13512}
+      Script: {instanceID: 13510}
+    - Class: 114
+      Script: {instanceID: 14092}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -426,6 +431,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: d321824a6890ebfa215df1f3eaedce1d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameBoard
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
@@ -736,7 +747,19 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: ad2d7df5eb8ddd59ff2fe99570df9195
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GridManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DMController
   platform: 9
   scenePathNames:
-  - Assets/Sceb.unity
+  - Assets/Scenes/Sceb.unity
   playerPath: /Users/samuelcolvillerea/Documents/P400/ARKit Playground/ARPlayground_V3

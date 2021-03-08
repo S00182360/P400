@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameBoard : MonoBehaviour
 {
+    //TODO: create tile generation method
+
     //Read board size
     //generate grid of size (x,y)
     [SerializeField]
@@ -13,14 +15,20 @@ public class GameBoard : MonoBehaviour
     int width;
     [SerializeField]
     int length;
-        
+
+    private void Awake()
+    {
+        StartCoroutine(DrawBoard(width, length));
+    }
     void Start()
     {
         DrawBoard(width, length);        
     }
 
-    private void DrawBoard(int w, int l)
+    private IEnumerator DrawBoard(int w, int l)
     {
+        WaitForSeconds wait = new WaitForSeconds(0.05f);
+
         //Vector3 widthVe = Vector3.right * w;
         Vector3 heightVe = Vector3.forward * l;
 
@@ -28,7 +36,6 @@ public class GameBoard : MonoBehaviour
         {
             Vector3 start = Vector3.forward * i;
             Vector3 startWidth;
-            //TODO: create tile generation method
             //Debug.DrawLine(start, start + widthVe);
 
             //Instantiate(boardTile, start + widthVe, Quaternion.identity);
@@ -38,6 +45,7 @@ public class GameBoard : MonoBehaviour
                 startWidth = Vector3.right * j;
                 startWidth += start;
                 Instantiate(boardTile, startWidth + heightVe, Quaternion.identity);
+                yield return wait;
             }
         }
 
@@ -48,4 +56,6 @@ public class GameBoard : MonoBehaviour
     {
         
     }
+
+    
 }
