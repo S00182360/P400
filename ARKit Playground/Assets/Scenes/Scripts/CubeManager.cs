@@ -12,7 +12,7 @@ public class CubeManager_old : MonoBehaviour
 
     void Start()
     {
-        
+        arRaycastHits = new List<ARRaycastHit>();
     }
 
     // Update is called once per frame

@@ -62,43 +62,41 @@ extern void GridManager_Start_m25864069175D64A5C6422426532B06717037931B (void);
 extern void GridManager_Update_m7DFE054EE87DCD410712E4A620B6E501D3F713A1 (void);
 // 0x00000015 System.Void GridManager::PlaceGrid(UnityEngine.Vector3)
 extern void GridManager_PlaceGrid_mD9CFBF05F1A6E4F3146BC1088488C015D824A02E (void);
-// 0x00000016 System.Collections.IEnumerator GridManager::DelayDrawTiles(System.Int32,System.Int32)
-extern void GridManager_DelayDrawTiles_mDAF260C4139EE81DC4961571109B1FCD7D869365 (void);
-// 0x00000017 System.Void GridManager::DrawTiles(System.Int32,System.Int32,UnityEngine.Vector3)
-extern void GridManager_DrawTiles_m8304E2CBB3EDC7EB03F05CB02FB19DC9A3FF660A (void);
-// 0x00000018 System.Void GridManager::.ctor()
+// 0x00000016 System.Collections.IEnumerator GridManager::DrawTiles(System.Int32,System.Int32)
+extern void GridManager_DrawTiles_mE1361202A80E3AFB7163AD24A1188C00A0DBCC55 (void);
+// 0x00000017 System.Void GridManager::.ctor()
 extern void GridManager__ctor_m62BDDDB01F30FCA0E4B1342D81ADD7140686D2AB (void);
-// 0x00000019 System.Void TestObject::Start()
+// 0x00000018 System.Void TestObject::Start()
 extern void TestObject_Start_m2E982B858C6914535A5FB0B2577AAE893F9E5E33 (void);
-// 0x0000001A System.Void TestObject::Update()
+// 0x00000019 System.Void TestObject::Update()
 extern void TestObject_Update_m041AD086840E67EBFD094FA980A3EE6FD1A307F0 (void);
-// 0x0000001B System.Void TestObject::.ctor()
+// 0x0000001A System.Void TestObject::.ctor()
 extern void TestObject__ctor_m65DE4699CED3CE07DD97914F30CCEFEFCF976C51 (void);
-// 0x0000001C System.Void GameBoard_<DrawBoard>d__5::.ctor(System.Int32)
+// 0x0000001B System.Void GameBoard_<DrawBoard>d__5::.ctor(System.Int32)
 extern void U3CDrawBoardU3Ed__5__ctor_mD8BEE649B2BE6B01E8E1A423F453201CB38CF539 (void);
-// 0x0000001D System.Void GameBoard_<DrawBoard>d__5::System.IDisposable.Dispose()
+// 0x0000001C System.Void GameBoard_<DrawBoard>d__5::System.IDisposable.Dispose()
 extern void U3CDrawBoardU3Ed__5_System_IDisposable_Dispose_m0F3BF0090BEE9ED18AA1E185E3FFF8CE3258115A (void);
-// 0x0000001E System.Boolean GameBoard_<DrawBoard>d__5::MoveNext()
+// 0x0000001D System.Boolean GameBoard_<DrawBoard>d__5::MoveNext()
 extern void U3CDrawBoardU3Ed__5_MoveNext_m9E8AF318F172092988558FF07BCDDF937BA17815 (void);
-// 0x0000001F System.Object GameBoard_<DrawBoard>d__5::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000001E System.Object GameBoard_<DrawBoard>d__5::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CDrawBoardU3Ed__5_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7F26951D7C0C6A471439FD05411A9C25E2CEC5B2 (void);
-// 0x00000020 System.Void GameBoard_<DrawBoard>d__5::System.Collections.IEnumerator.Reset()
+// 0x0000001F System.Void GameBoard_<DrawBoard>d__5::System.Collections.IEnumerator.Reset()
 extern void U3CDrawBoardU3Ed__5_System_Collections_IEnumerator_Reset_m048A003D9C3085286F582859D3521A407CA01F24 (void);
-// 0x00000021 System.Object GameBoard_<DrawBoard>d__5::System.Collections.IEnumerator.get_Current()
+// 0x00000020 System.Object GameBoard_<DrawBoard>d__5::System.Collections.IEnumerator.get_Current()
 extern void U3CDrawBoardU3Ed__5_System_Collections_IEnumerator_get_Current_mED5F0B52FAD493A23D6C722B8CFA723FAEDCE0E6 (void);
-// 0x00000022 System.Void GridManager_<DelayDrawTiles>d__9::.ctor(System.Int32)
-extern void U3CDelayDrawTilesU3Ed__9__ctor_m20A81CADAD13A9BF3C7604F69B2D56E5339A3F5F (void);
-// 0x00000023 System.Void GridManager_<DelayDrawTiles>d__9::System.IDisposable.Dispose()
-extern void U3CDelayDrawTilesU3Ed__9_System_IDisposable_Dispose_m3303639EF31168A9E3A86FB9890FA2F13D5B692C (void);
-// 0x00000024 System.Boolean GridManager_<DelayDrawTiles>d__9::MoveNext()
-extern void U3CDelayDrawTilesU3Ed__9_MoveNext_mF36F326BF29D403F3EDF997F1063A21F3349A9A6 (void);
-// 0x00000025 System.Object GridManager_<DelayDrawTiles>d__9::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CDelayDrawTilesU3Ed__9_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mABEEF6B269A096AD82583C69379CD6A8DBCD1C77 (void);
-// 0x00000026 System.Void GridManager_<DelayDrawTiles>d__9::System.Collections.IEnumerator.Reset()
-extern void U3CDelayDrawTilesU3Ed__9_System_Collections_IEnumerator_Reset_m6AF816DDC2D66F4E7D4F33C93D9E2381EB2FD9FF (void);
-// 0x00000027 System.Object GridManager_<DelayDrawTiles>d__9::System.Collections.IEnumerator.get_Current()
-extern void U3CDelayDrawTilesU3Ed__9_System_Collections_IEnumerator_get_Current_mD6405FE9281B726B5C70CDA3C71AE52006DE5A36 (void);
-static Il2CppMethodPointer s_methodPointers[39] = 
+// 0x00000021 System.Void GridManager_<DrawTiles>d__9::.ctor(System.Int32)
+extern void U3CDrawTilesU3Ed__9__ctor_m2A18CC4F33F08BC05C897DE3D7701D85B9C130C4 (void);
+// 0x00000022 System.Void GridManager_<DrawTiles>d__9::System.IDisposable.Dispose()
+extern void U3CDrawTilesU3Ed__9_System_IDisposable_Dispose_m24223E5AEC50D505BF136683C862A0D697D496BE (void);
+// 0x00000023 System.Boolean GridManager_<DrawTiles>d__9::MoveNext()
+extern void U3CDrawTilesU3Ed__9_MoveNext_mA393B368ACCA572724663DCB20300BD8ED90F012 (void);
+// 0x00000024 System.Object GridManager_<DrawTiles>d__9::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CDrawTilesU3Ed__9_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA03D5B51BA30C5B178A5378A9B905E95A1F374CD (void);
+// 0x00000025 System.Void GridManager_<DrawTiles>d__9::System.Collections.IEnumerator.Reset()
+extern void U3CDrawTilesU3Ed__9_System_Collections_IEnumerator_Reset_m31E6FE23D136C1A7558B9EADB0481F8F238BF65E (void);
+// 0x00000026 System.Object GridManager_<DrawTiles>d__9::System.Collections.IEnumerator.get_Current()
+extern void U3CDrawTilesU3Ed__9_System_Collections_IEnumerator_get_Current_m5B3EDF6E0DC4F464845506A15B90CA91B3DE118A (void);
+static Il2CppMethodPointer s_methodPointers[38] = 
 {
 	CubeManager_Start_m95D28D6642BF75ECC3D43E45709A7A80BF9CA380,
 	CubeManager_Update_mF54CA5A37DBB979B72108A36681EF983EFE5E0B9,
@@ -121,8 +119,7 @@ static Il2CppMethodPointer s_methodPointers[39] =
 	GridManager_Start_m25864069175D64A5C6422426532B06717037931B,
 	GridManager_Update_m7DFE054EE87DCD410712E4A620B6E501D3F713A1,
 	GridManager_PlaceGrid_mD9CFBF05F1A6E4F3146BC1088488C015D824A02E,
-	GridManager_DelayDrawTiles_mDAF260C4139EE81DC4961571109B1FCD7D869365,
-	GridManager_DrawTiles_m8304E2CBB3EDC7EB03F05CB02FB19DC9A3FF660A,
+	GridManager_DrawTiles_mE1361202A80E3AFB7163AD24A1188C00A0DBCC55,
 	GridManager__ctor_m62BDDDB01F30FCA0E4B1342D81ADD7140686D2AB,
 	TestObject_Start_m2E982B858C6914535A5FB0B2577AAE893F9E5E33,
 	TestObject_Update_m041AD086840E67EBFD094FA980A3EE6FD1A307F0,
@@ -133,14 +130,14 @@ static Il2CppMethodPointer s_methodPointers[39] =
 	U3CDrawBoardU3Ed__5_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7F26951D7C0C6A471439FD05411A9C25E2CEC5B2,
 	U3CDrawBoardU3Ed__5_System_Collections_IEnumerator_Reset_m048A003D9C3085286F582859D3521A407CA01F24,
 	U3CDrawBoardU3Ed__5_System_Collections_IEnumerator_get_Current_mED5F0B52FAD493A23D6C722B8CFA723FAEDCE0E6,
-	U3CDelayDrawTilesU3Ed__9__ctor_m20A81CADAD13A9BF3C7604F69B2D56E5339A3F5F,
-	U3CDelayDrawTilesU3Ed__9_System_IDisposable_Dispose_m3303639EF31168A9E3A86FB9890FA2F13D5B692C,
-	U3CDelayDrawTilesU3Ed__9_MoveNext_mF36F326BF29D403F3EDF997F1063A21F3349A9A6,
-	U3CDelayDrawTilesU3Ed__9_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mABEEF6B269A096AD82583C69379CD6A8DBCD1C77,
-	U3CDelayDrawTilesU3Ed__9_System_Collections_IEnumerator_Reset_m6AF816DDC2D66F4E7D4F33C93D9E2381EB2FD9FF,
-	U3CDelayDrawTilesU3Ed__9_System_Collections_IEnumerator_get_Current_mD6405FE9281B726B5C70CDA3C71AE52006DE5A36,
+	U3CDrawTilesU3Ed__9__ctor_m2A18CC4F33F08BC05C897DE3D7701D85B9C130C4,
+	U3CDrawTilesU3Ed__9_System_IDisposable_Dispose_m24223E5AEC50D505BF136683C862A0D697D496BE,
+	U3CDrawTilesU3Ed__9_MoveNext_mA393B368ACCA572724663DCB20300BD8ED90F012,
+	U3CDrawTilesU3Ed__9_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA03D5B51BA30C5B178A5378A9B905E95A1F374CD,
+	U3CDrawTilesU3Ed__9_System_Collections_IEnumerator_Reset_m31E6FE23D136C1A7558B9EADB0481F8F238BF65E,
+	U3CDrawTilesU3Ed__9_System_Collections_IEnumerator_get_Current_m5B3EDF6E0DC4F464845506A15B90CA91B3DE118A,
 };
-static const int32_t s_InvokerIndices[39] = 
+static const int32_t s_InvokerIndices[38] = 
 {
 	23,
 	23,
@@ -164,7 +161,6 @@ static const int32_t s_InvokerIndices[39] =
 	23,
 	976,
 	148,
-	1486,
 	23,
 	23,
 	23,
@@ -186,7 +182,7 @@ extern const Il2CppCodeGenModule g_AssemblyU2DCSharpCodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharpCodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	39,
+	38,
 	s_methodPointers,
 	s_InvokerIndices,
 	0,

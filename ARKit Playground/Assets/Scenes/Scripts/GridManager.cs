@@ -18,11 +18,11 @@ public class GridManager : MonoBehaviour
     [SerializeField]
     int length;
 
-    private List<ARRaycastHit> aRRayHits = new List<ARRaycastHit>();
+    private List<ARRaycastHit> aRRayHits;
 
     void Start()
     {
-        
+        aRRayHits = new List<ARRaycastHit>();
     }
 
     void Update()
@@ -58,11 +58,6 @@ public class GridManager : MonoBehaviour
                 }
             }
         }
-    }
-
-    private void PlaceGrid(Vector3 pos)
-    {
-        Instantiate(Grid, pos, Quaternion.identity);
     }
 
     private IEnumerator DelayDrawTiles(int w, int l)
