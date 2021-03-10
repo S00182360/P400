@@ -9,10 +9,12 @@ public class Tile : MonoBehaviour
     [SerializeField]
     Material UnclickedMat;
     public bool isClicked;
-    public List<int>GridPos = new List<int>();
+    public Vector2 GridPos;
     public string GridName;
 
+    [SerializeField]
     GameObject CurrentTile;
+    [SerializeField]
     GameObject PreviousTile;
 
     private void Start()
@@ -37,14 +39,17 @@ public class Tile : MonoBehaviour
             {
                 PreviousTile.GetComponent<Renderer>().material = UnclickedMat;
             }
+            PreviousTile = CurrentTile;
 
             CurrentTile = hit.collider.gameObject;
-            PreviousTile = CurrentTile;
+
             if (CurrentTile.TryGetComponent(out Tile tile))
             {
+                GetComponentInParent<GameBoard>().SelectedTile = CurrentTile;
                 CurrentTile.GetComponent<Renderer>().material = ClickedMat;
-                Debug.Log(tile.GridName);
+                //Debug.Log(tile.GridName);
             }
+            Debug.Log(string.Format("Current Tile :{0}\nPrevious Tile:{1}", CurrentTile.GetComponent<Tile>().GridName, PreviousTile.GetComponent<Tile>().GridName));
         }
     }
 }

@@ -92,8 +92,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.7613649, z: 1}
+  m_Center: {x: 0, y: 0.07887125, z: 0}
 --- !u!114 &7674652020836154146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +109,5 @@ MonoBehaviour:
   ClickedMat: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   UnclickedMat: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
   isClicked: 0
-  GridPos: 
+  GridPos: {x: 0, y: 0}
   GridName: 
-  board: {fileID: 0}
