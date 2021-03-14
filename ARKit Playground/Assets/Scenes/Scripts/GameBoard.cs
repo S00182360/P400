@@ -19,9 +19,9 @@ public class GameBoard : MonoBehaviour
     int length;
 
     [SerializeField]
-    Material ClickedMat;
+    public Material ClickedMat;
     [SerializeField]
-    Material UnclickedMat;
+    public Material UnclickedMat;
 
     GameObject CurrentTile;
     GameObject PreviousTile;
@@ -34,41 +34,30 @@ public class GameBoard : MonoBehaviour
     public Tile selectedTile;
     public PlayerCharacter selectedPlayer;
 
-
-    private void Awake()
-    {
-    }
     void Start()
     {
         AllTiles = new List<GameObject>();
         //StartCoroutine(DrawBoardDelayed(width, length));
         DrawBoard(width, length);
-
+        CreatePlayer("Player1", new Vector3(0, 0, 0));
+        CreatePlayer("Player1", new Vector3(0, 0, 4));
+        CreatePlayer("Player1", new Vector3(4, 0, 4));
+        CreatePlayer("Player1", new Vector3(4, 0, 0));
     }
 
     private void DrawBoard(int w, int l)
     {
         //Vector3 widthVe = Vector3.right * w;
-        Vector3 heightVe = Vector3.forward * l;
-
-        for (int i = 0; i < w; i++)
+        for (int x = 0; x < width; x++)
         {
-            Vector3 start = Vector3.forward * i;
-            Vector3 startWidth;
-
-            for (int j = 0; j < l; j++)
+            for (int z = 0; z < length; z++)
             {
-                startWidth = Vector3.right * j;
-                startWidth += start;
-                GameObject newTile = Instantiate(boardTile, startWidth + heightVe, Quaternion.identity);
-                newTile.transform.parent = this.transform;
-                AllTiles.Add(newTile);
-                if (newTile.TryGetComponent(out Tile tile))
-                {
-                    tile.GridPos.x = i;
-                    tile.GridPos.y = j;
-                    tile.GridName = i.ToString() + j.ToString();
-                }
+                Tile spawnedTile = Instantiate(tile, new Vector3(x, 0, z), Quaternion.identity);
+                spawnedTile.transform.SetParent(transform);
+                spawnedTile.name = string.Concat(x.ToString(), " , ", z.ToString());
+                spawnedTile.GridPos.x = x;
+                spawnedTile.GridPos.y = z;
+
             }
         }
     }
