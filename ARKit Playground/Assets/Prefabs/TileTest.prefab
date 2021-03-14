@@ -109,3 +109,4 @@ MonoBehaviour:
   GridPos: {x: 0, y: 0}
   GridName: 
   isSelected: 0
+  gameBoard: {fileID: 0}

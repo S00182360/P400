@@ -21,13 +21,14 @@ public class InputManager : MonoBehaviour
 
             if (gameBoard.GetSelectedPlayer() && gameBoard.GetSelectedPlayer().isSelected)
             {
-                if (obj && obj.layer == 8)
+                //if (obj && obj.layer == 8)
                     gameBoard.GetSelectedPlayer().SetPosition(obj.transform.position);
             }
             else
-                SelTile(obj);
-
-
+            {
+                obj.GetComponent<ISelectable>().Select();
+                //SelTile(obj);
+            }
         }
 
         if (Input.GetMouseButtonDown(1))
