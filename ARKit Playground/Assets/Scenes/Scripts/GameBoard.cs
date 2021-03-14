@@ -12,17 +12,28 @@ public class GameBoard : MonoBehaviour
     GameObject boardTile;
     [SerializeField]
     List<GameObject> AllTiles;
+
     [SerializeField]
     int width;
     [SerializeField]
     int length;
+
     [SerializeField]
     Material ClickedMat;
     [SerializeField]
     Material UnclickedMat;
-    public GameObject SelectedTile;
+
     GameObject CurrentTile;
     GameObject PreviousTile;
+
+    [SerializeField]
+    Tile tile;
+    [SerializeField]
+    PlayerCharacter player;
+
+    public Tile selectedTile;
+    public PlayerCharacter selectedPlayer;
+
 
     private void Awake()
     {
@@ -124,5 +135,70 @@ public class GameBoard : MonoBehaviour
         
     }
 
-    
+    public void SelectPlayer(PlayerCharacter player)
+    {
+        DeselectTile();
+        
+        if (selectedPlayer)
+            DeselectPlayer();
+
+        selectedPlayer = player;
+        selectedPlayer.UpdateMaterial(ClickedMat);
+        selectedPlayer.isSelected = true;
+    }
+
+    public void SelectTile(Tile tile)
+    {
+        if (selectedTile)
+            DeselectTile();
+
+        selectedTile = tile;
+        selectedTile.UpdateMat(ClickedMat);
+        selectedTile.isSelected = true;
+    }
+
+    public Tile GetSelectedTile()
+    {
+        if (!selectedTile)
+        {
+            Debug.Log("tile is null GameBoard.GetSelectedTile()");
+            throw new System.Exception("tile is null GameBoard.GetSelectedTile()");
+        }
+        else
+            return selectedTile;
+    }
+
+    public PlayerCharacter GetSelectedPlayer()
+    {
+        if (!selectedPlayer)
+        {
+            Debug.Log("player is null GameBoard.GetSelectedPlayer()");
+            throw new System.Exception("player is null GameBoard.GetSelectedPlayer()");
+        }
+        else
+            return selectedPlayer;
+    }
+
+    public void DeselectPlayer()
+    {
+        selectedPlayer.UpdateMaterial(UnclickedMat);
+        selectedPlayer.isSelected = false;
+    }
+
+    public void DeselectTile()
+    {
+        if (selectedTile != null)
+        {
+            selectedTile.UpdateMat(UnclickedMat);
+            selectedTile.isSelected = false;
+        }
+    }
+
+    private void CreatePlayer(string name, Vector3 pos)
+    {
+        PlayerCharacter newPlayer = Instantiate(player, transform.position, Quaternion.identity);
+        newPlayer.transform.SetParent(transform);
+        newPlayer.name = name;
+        newPlayer.SetPosition(pos);
+    }
 }

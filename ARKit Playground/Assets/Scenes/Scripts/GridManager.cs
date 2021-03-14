@@ -18,6 +18,7 @@ public class GridManager : MonoBehaviour
     [SerializeField]
     int length;
 
+
     private List<ARRaycastHit> aRRayHits;
 
     void Start()
