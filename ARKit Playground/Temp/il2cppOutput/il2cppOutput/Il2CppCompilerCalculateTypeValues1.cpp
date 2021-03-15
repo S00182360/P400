@@ -5509,6 +5509,10 @@ public:
 	Tile_tA4A2BAF7343E4C77F547773A39289641340B4E6D * ___selection_6;
 	// UnityEngine.Touch InputManager::touch
 	Touch_tAACD32535FF3FE5DD91125E0B6987B93C68D2DE8  ___touch_7;
+	// UnityEngine.XR.ARFoundation.ARRaycastManager InputManager::arRaycastManager
+	ARRaycastManager_t81A9513150BA5BE536DF064F1C6DE73349A60BE7 * ___arRaycastManager_8;
+	// System.Collections.Generic.List`1<UnityEngine.XR.ARFoundation.ARRaycastHit> InputManager::arRaycastHits
+	List_1_tE22AC27B04238DDEA6B873A77D0222DA9B480F52 * ___arRaycastHits_9;
 
 public:
 	inline static int32_t get_offset_of_gameBoard_4() { return static_cast<int32_t>(offsetof(InputManager_t208BBEDF18F7B320FCB945FC0F5D757BEBC45ACE, ___gameBoard_4)); }
@@ -5544,6 +5548,24 @@ public:
 	inline void set_touch_7(Touch_tAACD32535FF3FE5DD91125E0B6987B93C68D2DE8  value)
 	{
 		___touch_7 = value;
+	}
+
+	inline static int32_t get_offset_of_arRaycastManager_8() { return static_cast<int32_t>(offsetof(InputManager_t208BBEDF18F7B320FCB945FC0F5D757BEBC45ACE, ___arRaycastManager_8)); }
+	inline ARRaycastManager_t81A9513150BA5BE536DF064F1C6DE73349A60BE7 * get_arRaycastManager_8() const { return ___arRaycastManager_8; }
+	inline ARRaycastManager_t81A9513150BA5BE536DF064F1C6DE73349A60BE7 ** get_address_of_arRaycastManager_8() { return &___arRaycastManager_8; }
+	inline void set_arRaycastManager_8(ARRaycastManager_t81A9513150BA5BE536DF064F1C6DE73349A60BE7 * value)
+	{
+		___arRaycastManager_8 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___arRaycastManager_8), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_arRaycastHits_9() { return static_cast<int32_t>(offsetof(InputManager_t208BBEDF18F7B320FCB945FC0F5D757BEBC45ACE, ___arRaycastHits_9)); }
+	inline List_1_tE22AC27B04238DDEA6B873A77D0222DA9B480F52 * get_arRaycastHits_9() const { return ___arRaycastHits_9; }
+	inline List_1_tE22AC27B04238DDEA6B873A77D0222DA9B480F52 ** get_address_of_arRaycastHits_9() { return &___arRaycastHits_9; }
+	inline void set_arRaycastHits_9(List_1_tE22AC27B04238DDEA6B873A77D0222DA9B480F52 * value)
+	{
+		___arRaycastHits_9 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___arRaycastHits_9), (void*)value);
 	}
 };
 
@@ -7159,12 +7181,14 @@ extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2214;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize2214 = { 0, -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2215;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize2215 = { sizeof (InputManager_t208BBEDF18F7B320FCB945FC0F5D757BEBC45ACE), -1, 0, 0 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable2215[4] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable2215[6] = 
 {
 	InputManager_t208BBEDF18F7B320FCB945FC0F5D757BEBC45ACE::get_offset_of_gameBoard_4(),
 	InputManager_t208BBEDF18F7B320FCB945FC0F5D757BEBC45ACE::get_offset_of_highlightMat_5(),
 	InputManager_t208BBEDF18F7B320FCB945FC0F5D757BEBC45ACE::get_offset_of_selection_6(),
 	InputManager_t208BBEDF18F7B320FCB945FC0F5D757BEBC45ACE::get_offset_of_touch_7(),
+	InputManager_t208BBEDF18F7B320FCB945FC0F5D757BEBC45ACE::get_offset_of_arRaycastManager_8(),
+	InputManager_t208BBEDF18F7B320FCB945FC0F5D757BEBC45ACE::get_offset_of_arRaycastHits_9(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2216;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize2216 = { sizeof (PlayerCharacter_t1AF5ACA20E21A51210F639B35DF4094A2AB2B639), -1, 0, 0 };

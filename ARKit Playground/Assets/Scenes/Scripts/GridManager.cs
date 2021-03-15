@@ -20,6 +20,7 @@ public class GridManager : MonoBehaviour
 
 
     private List<ARRaycastHit> aRRayHits;
+    
 
     void Start()
     {

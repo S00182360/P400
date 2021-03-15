@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 public class GameBoard : MonoBehaviour
 {
@@ -34,16 +35,21 @@ public class GameBoard : MonoBehaviour
     public Tile selectedTile;
     public PlayerCharacter selectedPlayer;
 
+    //public ARRaycastManager arRaycastManager;
+
+
     void Start()
     {
         isDrawn = false;
         AllTiles = new List<GameObject>();
+        //arRaycastHits= new List<ARRaycastHit>();
         //StartCoroutine(DrawBoardDelayed(width, length));
-        DrawBoard();
-        CreatePlayer("Player1", new Vector3(0, 0, 0));
-        CreatePlayer("Player1", new Vector3(0, 0, 4));
-        CreatePlayer("Player1", new Vector3(4, 0, 4));
-        CreatePlayer("Player1", new Vector3(4, 0, 0));
+        //DrawBoard();
+        
+        //CreatePlayer("Player1", new Vector3(0, 0, 0));
+        //CreatePlayer("Player1", new Vector3(0, 0, 4));
+        //CreatePlayer("Player1", new Vector3(4, 0, 4));
+        //CreatePlayer("Player1", new Vector3(4, 0, 0));
     }
 
     public void DrawBoard()
@@ -64,10 +70,72 @@ public class GameBoard : MonoBehaviour
         }
     }
 
+    public void DrawBoardFromTouch(Vector3 startPos)
+    {
+        isDrawn = true;
+        Vector3 currentPos = startPos;
+        //new Vector3(x, 0, z)
+        for (int x = 0; x < width; x++)
+        {
+            
+            for (int z = 0; z < length; z++)
+            {
+                //currentPos
+                Tile spawnedTile = Instantiate(tile, currentPos, Quaternion.identity);
+                spawnedTile.transform.SetParent(transform);
+                spawnedTile.name = string.Concat(x.ToString(), " , ", z.ToString());
+                spawnedTile.GridPos.x = x;
+                spawnedTile.GridPos.y = z;
+            }
+        }
+    }
+
+    public void DrawTiles(Vector3 start)
+    {
+        isDrawn = true;
+        Vector3 lengthVe = start * length;
+
+        for (int i = 0; i < width; i++)
+        {
+            //start = Vector3.forward * i;
+            Vector3 startWidth;
+
+            for (int j = 0; j < length; j++)
+            {
+                startWidth = Vector3.right * j;
+                startWidth += start;
+                Instantiate(tile, startWidth + lengthVe, Quaternion.identity);
+            }
+        }
+    }
 
     void Update()
     {
-        
+        //if (Input.touchCount > 0)
+        //{
+        //    var touch = Input.GetTouch(0);
+        //    if (touch.phase == TouchPhase.Ended)
+        //    {
+        //        if (Input.touchCount == 1)
+        //        {
+        //            if (arRaycastManager.Raycast(touch.position, arRaycastHits))
+        //            {
+        //                var pose = arRaycastHits[0].pose;
+        //                CreateCube(pose.position);
+        //                return;
+        //            }
+        //            Ray rayCast = Camera.main.ScreenPointToRay(touch.position);
+        //            if (Physics.Raycast(rayCast, out RaycastHit hit))
+        //            {
+        //                if (hit.collider.tag == "CubeObject")
+        //                {
+        //                    DeleteCube(hit.collider.gameObject);
+        //                }
+        //            }
+
+        //        }
+        //    }
+        //}
     }
 
     

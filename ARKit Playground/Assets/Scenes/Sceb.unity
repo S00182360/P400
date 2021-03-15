@@ -595,6 +595,7 @@ MonoBehaviour:
   highlightMat: {fileID: 2100000, guid: 15654a743eccf384fb2312048db767f0, type: 2}
   selection: {fileID: 1644779197130985767, guid: b2f8f5f3be3d94cceb9c59ae216c85c9,
     type: 3}
+  arRaycastManager: {fileID: 637824767}
 --- !u!4 &1526053444
 Transform:
   m_ObjectHideFlags: 0
@@ -640,6 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boardTile: {fileID: 0}
   AllTiles: []
+  isDrawn: 0
   width: 25
   length: 30
   ClickedMat: {fileID: 2100000, guid: 42e26e838cb21e944aa7de2aae4edefc, type: 2}
