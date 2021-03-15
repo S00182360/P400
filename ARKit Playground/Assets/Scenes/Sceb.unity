@@ -262,7 +262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &388727972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,8 +277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aRRaycast: {fileID: 637824767}
   Tile: {fileID: 8719948923959043670, guid: deb92fabc378c4fa8b8ed3ca5e9b27f5, type: 3}
-  width: 10
-  length: 5
+  width: 30
+  length: 25
 --- !u!4 &388727973
 Transform:
   m_ObjectHideFlags: 0
@@ -562,3 +562,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aRRaycastManager: {fileID: 637824767}
   Cube: {fileID: 7590114249164453675, guid: 65e5e4a85068e4652902faf608c0cd9a, type: 3}
+--- !u!1 &1526053442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1526053444}
+  - component: {fileID: 1526053443}
+  m_Layer: 0
+  m_Name: InputManage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1526053443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526053442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45e7733a482d4dcf8f5a770af05587b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameBoard: {fileID: 0}
+  highlightMat: {fileID: 2100000, guid: 15654a743eccf384fb2312048db767f0, type: 2}
+  selection: {fileID: 1644779197130985767, guid: b2f8f5f3be3d94cceb9c59ae216c85c9,
+    type: 3}
+--- !u!4 &1526053444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526053442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8086817, y: -11.89712, z: 0.25807953}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1849825031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849825033}
+  - component: {fileID: 1849825032}
+  m_Layer: 0
+  m_Name: BoardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1849825032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849825031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe47549ca55145c486defbef738e538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardTile: {fileID: 0}
+  AllTiles: []
+  width: 25
+  length: 30
+  ClickedMat: {fileID: 2100000, guid: 42e26e838cb21e944aa7de2aae4edefc, type: 2}
+  UnclickedMat: {fileID: 2100000, guid: fedc75da63b32e249bccd7450cd29351, type: 2}
+  tile: {fileID: 1644779197130985767, guid: b2f8f5f3be3d94cceb9c59ae216c85c9, type: 3}
+  player: {fileID: 8362577886743608864, guid: dc67cb1230f8e43bfa4f521f44dcaab5, type: 3}
+  selectedTile: {fileID: 0}
+  selectedPlayer: {fileID: 0}
+--- !u!4 &1849825033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849825031}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8086817, y: -11.89712, z: 0.25807953}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

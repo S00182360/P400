@@ -12,7 +12,7 @@ public class GameBoard : MonoBehaviour
     GameObject boardTile;
     [SerializeField]
     List<GameObject> AllTiles;
-
+    public bool isDrawn;
     [SerializeField]
     int width;
     [SerializeField]
@@ -36,17 +36,19 @@ public class GameBoard : MonoBehaviour
 
     void Start()
     {
+        isDrawn = false;
         AllTiles = new List<GameObject>();
         //StartCoroutine(DrawBoardDelayed(width, length));
-        DrawBoard(width, length);
+        DrawBoard();
         CreatePlayer("Player1", new Vector3(0, 0, 0));
         CreatePlayer("Player1", new Vector3(0, 0, 4));
         CreatePlayer("Player1", new Vector3(4, 0, 4));
         CreatePlayer("Player1", new Vector3(4, 0, 0));
     }
 
-    private void DrawBoard(int w, int l)
+    public void DrawBoard()
     {
+        isDrawn = true;
         //Vector3 widthVe = Vector3.right * w;
         for (int x = 0; x < width; x++)
         {

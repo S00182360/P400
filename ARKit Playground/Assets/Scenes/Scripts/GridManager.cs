@@ -36,7 +36,7 @@ public class GridManager : MonoBehaviour
             {
                 if(Input.touchCount == 1)
                 {
-                    if(aRRaycast.Raycast(touch.position, aRRayHits))
+                    if (aRRaycast.Raycast(touch.position, aRRayHits))
                     {
                         var pose = aRRayHits[0].pose;
                         //Use event handler to start GameBoard?

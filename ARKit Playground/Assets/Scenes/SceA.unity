@@ -155,8 +155,8 @@ MonoBehaviour:
   AllTiles: []
   width: 10
   length: 5
-  ClickedMat: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  UnclickedMat: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  ClickedMat: {fileID: 2100000, guid: 42e26e838cb21e944aa7de2aae4edefc, type: 2}
+  UnclickedMat: {fileID: 2100000, guid: fedc75da63b32e249bccd7450cd29351, type: 2}
   tile: {fileID: 7674652020836154146, guid: deb92fabc378c4fa8b8ed3ca5e9b27f5, type: 3}
   player: {fileID: 8362577886743608864, guid: dc67cb1230f8e43bfa4f521f44dcaab5, type: 3}
   selectedTile: {fileID: 7674652020836154146, guid: deb92fabc378c4fa8b8ed3ca5e9b27f5,
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameBoard: {fileID: 1177486264}
-  highlightMat: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  highlightMat: {fileID: 2100000, guid: d805d830c4023774cb6259aca09f431e, type: 2}
   selection: {fileID: 7674652020836154146, guid: deb92fabc378c4fa8b8ed3ca5e9b27f5,
     type: 3}
 --- !u!4 &1415950331

@@ -10,27 +10,24 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     Material highlightMat;
     public Tile selection;
+    Touch touch;
 
     void Update()
     {
         HighlightTile();
 
+        //select player or tile
         if (Input.GetMouseButtonDown(0))
         {
             GameObject obj = RayGetObj();
 
             if (gameBoard.GetSelectedPlayer() && gameBoard.GetSelectedPlayer().isSelected)
-            {
-                //if (obj && obj.layer == 8)
                     gameBoard.GetSelectedPlayer().SetPosition(obj.transform.position);
-            }
             else
-            {
                 obj.GetComponent<ISelectable>().Select();
-                //SelTile(obj);
-            }
         }
 
+        //Deselect tile or player
         if (Input.GetMouseButtonDown(1))
         {
             if(gameBoard.GetSelectedPlayer() && gameBoard.GetSelectedPlayer().isSelected)
@@ -40,7 +37,33 @@ public class InputManager : MonoBehaviour
                 gameBoard.DeselectTile();
         }
 
-        
+        //Select player or tile from touch
+        foreach (Touch touch in Input.touches)
+        {
+            //if (!gameBoard.isDrawn)
+                //gameBoard.DrawBoard();
+            //else
+            //{
+                if(touch.phase == TouchPhase.Began)
+                {
+                    GameObject obj = RayTouch(touch);
+                    if (gameBoard.GetSelectedPlayer() && gameBoard.GetSelectedPlayer().isSelected)
+                        gameBoard.GetSelectedPlayer().SetPosition(obj.transform.position);
+                    else
+                        obj.GetComponent<ISelectable>().Select();
+                }
+
+                //deselect onlong press
+                if(touch.deltaTime > 0.2f)
+                {
+                    if (gameBoard.GetSelectedPlayer() && gameBoard.GetSelectedPlayer().isSelected)
+                        gameBoard.DeselectPlayer();
+
+                    if (gameBoard.GetSelectedTile() && gameBoard.GetSelectedTile().isSelected)
+                        gameBoard.DeselectTile();
+                }
+            //}
+        }
     }
 
     private GameObject RayGetObj()
@@ -53,19 +76,13 @@ public class InputManager : MonoBehaviour
         return null;
     }
 
-    private void SelTile(GameObject obj)
+    private GameObject RayTouch(Touch touch)
     {
-        if (obj)
-        {
-            if (obj.layer == 8)
-                if (obj.TryGetComponent(out Tile tile))
-                    gameBoard.SelectTile(tile);
-
-
-            if (obj.layer == 9)
-                if (obj.TryGetComponent(out PlayerCharacter player))
-                    gameBoard.SelectPlayer(player);
-        }
+        Ray ray = Camera.main.ScreenPointToRay(touch.position);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+            return hit.transform.gameObject;
+        return null;
     }
 
     private void HighlightTile()
@@ -77,7 +94,7 @@ public class InputManager : MonoBehaviour
         }
         GameObject obj = RayGetObj();
 
-        if(obj && obj.layer == 8)
+        if(obj)
         {
             if(obj.TryGetComponent(out Tile tile))
                 if (!tile.isSelected)
@@ -87,4 +104,21 @@ public class InputManager : MonoBehaviour
                 }
         }
     }
+
+    #region Commented Code
+    //private void SelTile(GameObject obj)
+    //{
+    //    if (obj)
+    //    {
+    //        if (obj.layer == 8)
+    //            if (obj.TryGetComponent(out Tile tile))
+    //                tile.Select();
+
+
+    //        if (obj.layer == 9)
+    //            if (obj.TryGetComponent(out PlayerCharacter player))
+    //                player.Select();
+    //    }
+    //}
+    #endregion
 }
