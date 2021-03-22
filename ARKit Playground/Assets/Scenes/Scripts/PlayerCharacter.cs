@@ -6,9 +6,11 @@ public class PlayerCharacter : MonoBehaviour, ISelectable
 {
     public GameBoard gameBoard;
     public bool isSelected;
-    // Start is called before the first frame update
+    public CharacterDetail detail;
+    
     void Start()
     {
+        //SET character detail in code
         //gameObject.layer = 9;
         gameBoard = GetComponentInParent<GameBoard>();
     }

@@ -35,6 +35,9 @@ public class GameBoard : MonoBehaviour
     public Tile selectedTile;
     public PlayerCharacter selectedPlayer;
 
+    [SerializeField]
+    CharacterDetailPannel CharPan;
+
     //public ARRaycastManager arRaycastManager;
 
 
@@ -44,9 +47,16 @@ public class GameBoard : MonoBehaviour
         AllTiles = new List<GameObject>();
         //arRaycastHits= new List<ARRaycastHit>();
         //StartCoroutine(DrawBoardDelayed(width, length));
-        //DrawBoard();
-        
-        //CreatePlayer("Player1", new Vector3(0, 0, 0));
+        DrawBoard();
+        int[] stats = new int[6];
+        for (int i = 0; i < stats.Length; i++)
+        {
+            stats[i] = Random.Range(1, 10);
+
+        }
+
+
+        CreatePlayer(new Vector3(0, 0, 0));
         //CreatePlayer("Player1", new Vector3(0, 0, 4));
         //CreatePlayer("Player1", new Vector3(4, 0, 4));
         //CreatePlayer("Player1", new Vector3(4, 0, 0));
@@ -177,12 +187,31 @@ public class GameBoard : MonoBehaviour
         }
     }
 
-    private void CreatePlayer(string name, Vector3 pos)
+    private void CreatePlayer(Vector3 pos)
     {
         PlayerCharacter newPlayer = Instantiate(player, transform.position, Quaternion.identity);
+        int[] stats = new int[6];
+        for (int i = 0; i < stats.Length; i++)
+            stats[i] = Random.Range(1, 10);
+        PLAYERCLASS defineClass = (PLAYERCLASS)Random.Range(1, 12);
+        if (newPlayer.TryGetComponent(out CharacterDetail newChar))
+        {
+            newChar.Name = "Bardy McBardface";
+            newChar.DefineClass = defineClass;
+            newChar.Class = newChar.DefineClass.ToString();
+            newChar.Str = stats[0];
+            newChar.Dex = stats[1];
+            newChar.Con = stats[2];
+            newChar.Intel = stats[3];
+            newChar.Wis = stats[4];
+            newChar.Chr = stats[5];
+
+        }
+
         newPlayer.transform.SetParent(transform);
-        newPlayer.name = name;
         newPlayer.SetPosition(pos);
+        CharPan.CharacterInfo = newPlayer;
+        CharPan.SetDetails();
     }
 }
 
