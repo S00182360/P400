@@ -114,7 +114,7 @@ public class InputManager : MonoBehaviour
 
     private void HighlightTile()
     {
-        if (selection && !selection.isSelected)
+        if (selection != null && !selection.isSelected)
         {
             selection.UpdateMat(gameBoard.UnclickedMat);
             selection = null;

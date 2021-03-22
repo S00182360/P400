@@ -48,15 +48,8 @@ public class GameBoard : MonoBehaviour
         //arRaycastHits= new List<ARRaycastHit>();
         //StartCoroutine(DrawBoardDelayed(width, length));
         DrawBoard();
-        int[] stats = new int[6];
-        for (int i = 0; i < stats.Length; i++)
-        {
-            stats[i] = Random.Range(1, 10);
 
-        }
-
-
-        CreatePlayer(new Vector3(0, 0, 0));
+        //CreatePlayer(new Vector3(0, 0, 0));
         //CreatePlayer("Player1", new Vector3(0, 0, 4));
         //CreatePlayer("Player1", new Vector3(4, 0, 4));
         //CreatePlayer("Player1", new Vector3(4, 0, 0));
@@ -78,6 +71,7 @@ public class GameBoard : MonoBehaviour
 
             }
         }
+        CreatePlayer(new Vector3(0, 0, 0));
     }
 
     public void DrawBoardFromTouch(Vector3 startPos)
