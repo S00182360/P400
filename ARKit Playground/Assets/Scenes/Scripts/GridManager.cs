@@ -5,6 +5,7 @@ using UnityEngine.XR.ARFoundation;
 
 public class GridManager : MonoBehaviour
 {
+    //DO NO USE
     //TODO
     //Assign grid gameobject from GameBoard
     //

@@ -121,8 +121,6 @@ public class GameBoard : MonoBehaviour
 
     void Update()
     {
-        
-
         if (Input.touchCount > 0)
         {
             var touch = Input.GetTouch(0);
@@ -136,7 +134,7 @@ public class GameBoard : MonoBehaviour
                         var pose = aRRayHits[0].pose;
                         //PlaceGrid(pose.position);
                         //StartCoroutine(DrawTiles(width, length));
-                        DrawTiles(pose.position);
+                        DrawBoardFromTouch(pose.position);
                         return;
                     }
 
@@ -145,7 +143,7 @@ public class GameBoard : MonoBehaviour
                     if (Physics.Raycast(rayCast, out RaycastHit hit))
                     {
                         //Check collidaer tag for specific behaviours
-                        if (hit.collider.CompareTag(""))
+                        if (hit.collider.CompareTag("Tile"))
                         {
                             //Behaviour here
                         }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CubeObject
   - Character
+  - Tile
   layers:
   - Default
   - TransparentFX
