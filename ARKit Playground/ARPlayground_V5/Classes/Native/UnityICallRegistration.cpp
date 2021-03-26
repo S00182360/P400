@@ -98,6 +98,10 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.Animator
 
+		//System.Boolean UnityEngine.Animator::GetBoolString(System.String)
+		void Register_UnityEngine_Animator_GetBoolString();
+		Register_UnityEngine_Animator_GetBoolString();
+
 		//System.Boolean UnityEngine.Animator::get_hasBoundPlayables()
 		void Register_UnityEngine_Animator_get_hasBoundPlayables();
 		Register_UnityEngine_Animator_get_hasBoundPlayables();
@@ -105,6 +109,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Animator::ResetTriggerString(System.String)
 		void Register_UnityEngine_Animator_ResetTriggerString();
 		Register_UnityEngine_Animator_ResetTriggerString();
+
+		//System.Void UnityEngine.Animator::SetBoolString(System.String,System.Boolean)
+		void Register_UnityEngine_Animator_SetBoolString();
+		Register_UnityEngine_Animator_SetBoolString();
 
 		//System.Void UnityEngine.Animator::SetTriggerString(System.String)
 		void Register_UnityEngine_Animator_SetTriggerString();
