@@ -23,7 +23,7 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         HighlightTile();
-
+        #region MOUSE INPUT
         //select player or tile
         if (Input.GetMouseButtonDown(0))
         {
@@ -49,8 +49,9 @@ public class InputManager : MonoBehaviour
             if (gameBoard.GetSelectedTile() && gameBoard.GetSelectedTile().isSelected)
                 gameBoard.DeselectTile();
         }
+        #endregion
 
-        if(Input.touchCount > 0)
+        if (Input.touchCount > 0)
         {
             GameObject touchObj = RayTouch(touch);
             touch = Input.GetTouch(0);

@@ -5,11 +5,19 @@ using UnityEngine;
 public class InfoPanelOpen : MonoBehaviour
 {
     public GameObject CharInfoPanel;
+    private Animator animator;
+
+    private void Start()
+    {
+        CharInfoPanel.TryGetComponent(out animator);
+    }
+
     public void ShowPanel()
     {
         if(CharInfoPanel != null)
         {
-            Animator animator = CharInfoPanel.GetComponent<Animator>();
+            CharInfoPanel.SetActive(true);
+
             if (animator != null)
             {
                 bool isOpen = animator.GetBool("Open");

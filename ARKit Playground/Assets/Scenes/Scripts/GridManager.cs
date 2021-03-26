@@ -40,7 +40,6 @@ public class GridManager : MonoBehaviour
                     if (aRRaycast.Raycast(touch.position, aRRayHits))
                     {
                         var pose = aRRayHits[0].pose;
-                        //Use event handler to start GameBoard?
                         //PlaceGrid(pose.position);
                         //StartCoroutine(DrawTiles(width, length));
                         DrawTiles(width, length, pose.position);

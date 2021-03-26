@@ -601,7 +601,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: b524b4f400c3fce93b1ce3f0b810db12
+      Hash: 1b38ad5619ec7d595668b6f921c8ee58
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameBoard

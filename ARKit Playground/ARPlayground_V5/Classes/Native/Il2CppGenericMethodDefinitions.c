@@ -2846,7 +2846,7 @@ const Il2CppMethodSpec g_Il2CppMethodSpecTable[12240] =
 	{ 10735, -1, 1250 } /* !!0 UnityEngine.Object::Instantiate<Tile>(!!0,UnityEngine.Vector3,UnityEngine.Quaternion) */,
 	{ 10735, -1, 1251 } /* !!0 UnityEngine.Object::Instantiate<PlayerCharacter>(!!0,UnityEngine.Vector3,UnityEngine.Quaternion) */,
 	{ 10592, -1, 1249 } /* System.Boolean UnityEngine.Component::TryGetComponent<CharacterDetail>(!!0&) */,
-	{ 10624, -1, 1208 } /* !!0 UnityEngine.GameObject::GetComponent<UnityEngine.Animator>() */,
+	{ 10640, -1, 1208 } /* System.Boolean UnityEngine.GameObject::TryGetComponent<UnityEngine.Animator>(!!0&) */,
 	{ 10624, -1, 1252 } /* !!0 UnityEngine.GameObject::GetComponent<ISelectable>() */,
 	{ 10640, -1, 1250 } /* System.Boolean UnityEngine.GameObject::TryGetComponent<Tile>(!!0&) */,
 	{ 10600, -1, 1253 } /* !!0 UnityEngine.Component::GetComponentInParent<GameBoard>() */,
