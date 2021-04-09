@@ -5,7 +5,7 @@ using UnityEngine.XR.ARFoundation;
 
 public class InputManager : MonoBehaviour
 {
-
+    //DO NOT USE
     [SerializeField]
     public GameBoard gameBoard;
     [SerializeField]
@@ -29,8 +29,8 @@ public class InputManager : MonoBehaviour
         {
             GameObject obj = RayGetObj();
 
-            if (!gameBoard.isDrawn)
-                gameBoard.DrawTiles(Vector3.zero);
+            if (!gameBoard.isDrawn) { }
+                //gameBoard.DrawTiles(Vector3.zero);
             else
             {
                 if (gameBoard.GetSelectedPlayer() && gameBoard.GetSelectedPlayer().isSelected)
@@ -64,7 +64,7 @@ public class InputManager : MonoBehaviour
                         if(arRaycastManager.Raycast(touch.position, arRaycastHits))
                         {
                             Pose pose = arRaycastHits[0].pose;
-                            gameBoard.DrawTiles(pose.position);
+                            //gameBoard.DrawTiles(pose.position);
                             return;
                         }
                     }

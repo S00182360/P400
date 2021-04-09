@@ -42,9 +42,6 @@ public class GameBoard : MonoBehaviour
     [SerializeField]
     CharacterDetailPannel CharPan;
 
-    //public ARRaycastManager arRaycastManager;
-
-
     void Start()
     {
         isDrawn = false;
@@ -61,24 +58,71 @@ public class GameBoard : MonoBehaviour
         //CreatePlayer("Player1", new Vector3(4, 0, 0));
     }
 
-    public void DrawBoard()
+    void Update()
     {
-        isDrawn = true;
-        //Vector3 widthVe = Vector3.right * w;
-        for (int x = 0; x < width; x++)
+        if (!isDrawn)
         {
-            for (int z = 0; z < length; z++)
+            if (Input.touchCount > 0)
             {
-                Tile spawnedTile = Instantiate(tile, new Vector3(x, 0, z), Quaternion.identity);
-                spawnedTile.transform.SetParent(transform);
-                spawnedTile.name = string.Concat(x.ToString(), " , ", z.ToString());
-                spawnedTile.GridPos.x = x;
-                spawnedTile.GridPos.y = z;
+                var touch = Input.GetTouch(0);
 
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    if (Input.touchCount == 1)
+                    {
+                        if (aRRaycast.Raycast(touch.position, aRRayHits))
+                        {
+                            var pose = aRRayHits[0].pose;
+                            //PlaceGrid(pose.position);
+                            //StartCoroutine(DrawTiles(width, length));
+                            DrawBoardFromTouch(pose.position);
+                            return;
+                        }
+                    }
+                }
+            }
+
+        }
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                var touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    if (Input.touchCount == 1)
+                    {
+                        Ray rayCast = Camera.main.ScreenPointToRay(touch.position);
+
+                        if (Physics.Raycast(rayCast, out RaycastHit hit))
+                        {
+                            GameObject touchObj = hit.transform.gameObject;
+
+                            //Check collidaer tag for specific behaviours
+                            if (touchObj.CompareTag("Tile"))
+                            {
+                                if (GetSelectedPlayer() && GetSelectedPlayer().isSelected)
+                                    GetSelectedPlayer().SetPosition(touchObj.transform.position);
+                                else
+                                    touchObj.GetComponent<ISelectable>().Select();
+
+                            }
+                            else if (touchObj.CompareTag("Player Token"))
+                            {
+                                if (GetSelectedPlayer() && GetSelectedPlayer().isSelected)
+                                    GetSelectedPlayer().isSelected = !GetSelectedPlayer().isSelected;
+                                else
+                                    touchObj.GetComponent<ISelectable>().Select();
+                            }
+                            
+                        }
+                    }
+                }
             }
         }
-        CreatePlayer(new Vector3(0, 0, 0));
     }
+
 
     public void DrawBoardFromTouch(Vector3 startPos)
     {
@@ -87,7 +131,7 @@ public class GameBoard : MonoBehaviour
         //new Vector3(x, 0, z)
         for (int x = 0; x < width; x++)
         {
-            
+
             for (int z = 0; z < length; z++)
             {
                 //currentPos
@@ -98,62 +142,8 @@ public class GameBoard : MonoBehaviour
                 spawnedTile.GridPos.y = z;
             }
         }
+        CreatePlayer(new Vector3(0, 0, 0));
     }
-
-    public void DrawTiles(Vector3 start)
-    {
-        isDrawn = true;
-        Vector3 lengthVe = start * length;
-
-        for (int i = 0; i < width; i++)
-        {
-            //start = Vector3.forward * i;
-            Vector3 startWidth;
-
-            for (int j = 0; j < length; j++)
-            {
-                startWidth = Vector3.right * j;
-                startWidth += start;
-                Instantiate(tile, startWidth + lengthVe, Quaternion.identity);
-            }
-        }
-    }
-
-    void Update()
-    {
-        if (Input.touchCount > 0)
-        {
-            var touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Ended)
-            {
-                if (Input.touchCount == 1)
-                {
-                    if (aRRaycast.Raycast(touch.position, aRRayHits))
-                    {
-                        var pose = aRRayHits[0].pose;
-                        //PlaceGrid(pose.position);
-                        //StartCoroutine(DrawTiles(width, length));
-                        DrawBoardFromTouch(pose.position);
-                        return;
-                    }
-
-                    Ray rayCast = Camera.main.ScreenPointToRay(touch.position);
-
-                    if (Physics.Raycast(rayCast, out RaycastHit hit))
-                    {
-                        //Check collidaer tag for specific behaviours
-                        if (hit.collider.CompareTag("Tile"))
-                        {
-                            //Behaviour here
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    
 
     public Tile GetSelectedTile()
     {
@@ -245,7 +235,43 @@ public class GameBoard : MonoBehaviour
 //                    DeleteCube(hit.collider.gameObject);
 //                }
 //            }
+//        }
+//    }
+//}
+//UPDATE
 
+//METHODS
+//public void DrawBoard()
+//{
+//    isDrawn = true;
+//    //Vector3 widthVe = Vector3.right * w;
+//    for (int x = 0; x < width; x++)
+//    {
+//        for (int z = 0; z < length; z++)
+//        {
+//            Tile spawnedTile = Instantiate(tile, new Vector3(x, 0, z), Quaternion.identity);
+//            spawnedTile.transform.SetParent(transform);
+//            spawnedTile.name = string.Concat(x.ToString(), " , ", z.ToString());
+//            spawnedTile.GridPos.x = x;
+//            spawnedTile.GridPos.y = z;
+//        }
+//    }
+//    CreatePlayer(new Vector3(0, 0, 0));
+//}
+
+//public void DrawTiles(Vector3 start)
+//{
+//    isDrawn = true;
+//    Vector3 lengthVe = start * length;
+//    for (int i = 0; i < width; i++)
+//    {
+//        //start = Vector3.forward * i;
+//        Vector3 startWidth;
+//        for (int j = 0; j < length; j++)
+//        {
+//            startWidth = Vector3.right * j;
+//            startWidth += start;
+//            Instantiate(tile, startWidth + lengthVe, Quaternion.identity);
 //        }
 //    }
 //}
@@ -261,7 +287,6 @@ public class GameBoard : MonoBehaviour
 //        {
 //            PreviousTile.GetComponent<Renderer>().material = UnclickedMat;
 //        }
-
 //        CurrentTile = hit.collider.gameObject;
 //        PreviousTile = CurrentTile;
 //        if (CurrentTile.TryGetComponent(out Tile tile))
@@ -275,18 +300,14 @@ public class GameBoard : MonoBehaviour
 //private IEnumerator DrawBoardDelayed(int w, int l)
 //{
 //    WaitForSeconds wait = new WaitForSeconds(0.05f);
-
 //    //Vector3 widthVe = Vector3.right * w;
 //    Vector3 heightVe = Vector3.forward * l;
-
 //    for (int i = 0; i < w; i++)
 //    {
 //        Vector3 start = Vector3.forward * i;
 //        Vector3 startWidth;
 //        //Debug.DrawLine(start, start + widthVe);
-
 //        //Instantiate(boardTile, start + widthVe, Quaternion.identity);
-
 //        for (int j = 0; j < l; j++)
 //        {
 //            startWidth = Vector3.right * j;
@@ -302,16 +323,13 @@ public class GameBoard : MonoBehaviour
 //            yield return wait;
 //        }
 //    }
-
 //}
 
 //public void SelectPlayer(PlayerCharacter player)
 //{
 //    DeselectTile();
-
 //    if (selectedPlayer)
 //        DeselectPlayer();
-
 //    selectedPlayer = player;
 //    selectedPlayer.UpdateMaterial(ClickedMat);
 //    selectedPlayer.isSelected = true;
@@ -321,7 +339,6 @@ public class GameBoard : MonoBehaviour
 //{
 //    if (selectedTile)
 //        DeselectTile();
-
 //    selectedTile = tile;
 //    selectedTile.UpdateMat(ClickedMat);
 //    selectedTile.isSelected = true;
