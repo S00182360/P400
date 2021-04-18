@@ -19,7 +19,7 @@ public class HelpButton : MonoBehaviour
 
     public void ShowWebView()
     {
-        InAppBrowser.OpenURL("https://dnd5e.info/spellcasting/spell-list/bard/");
+        InAppBrowser.OpenURL("https://open5e.com/spells/spells-table");
         
     }
 }

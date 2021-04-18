@@ -31,28 +31,28 @@ public class EditCharacterDetail : MonoBehaviour
         switch (gameObject.tag)
         {
             case "STR":
-                details.Str++;
-                StatValue.text = details.Str.ToString();
+                details.detailInfo.Str++;
+                StatValue.text = details.detailInfo.Str.ToString();
                 break;
             case "DEX":
-                details.Dex++;
-                StatValue.text = details.Dex.ToString();
+                details.detailInfo.Dex++;
+                StatValue.text = details.detailInfo.Dex.ToString();
                 break;
             case "CON":
-                details.Con++;
-                StatValue.text = details.Con.ToString();
+                details.detailInfo.Con++;
+                StatValue.text = details.detailInfo.Con.ToString();
                 break;
             case "INTEL":
-                details.Intel++;
-                StatValue.text = details.Intel.ToString();
+                details.detailInfo.Intel++;
+                StatValue.text = details.detailInfo.Intel.ToString();
                 break;
             case "WIS":
-                details.Wis++;
-                StatValue.text = details.Wis.ToString();
+                details.detailInfo.Wis++;
+                StatValue.text = details.detailInfo.Wis.ToString();
                 break;
             case "CHR":
-                details.Chr++;
-                StatValue.text = details.Chr.ToString();
+                details.detailInfo.Chr++;
+                StatValue.text = details.detailInfo.Chr.ToString();
                 break;
             default:
                 break;
@@ -65,28 +65,28 @@ public class EditCharacterDetail : MonoBehaviour
         switch (gameObject.tag)
         {
             case "STR":
-                details.Str--;
-                StatValue.text = details.Str.ToString();
+                details.detailInfo.Str--;
+                StatValue.text = details.detailInfo.Str.ToString();
                 break;
             case "DEX":
-                details.Dex--;
-                StatValue.text = details.Dex.ToString();
+                details.detailInfo.Dex--;
+                StatValue.text = details.detailInfo.Dex.ToString();
                 break;
             case "CON":
-                details.Con--;
-                StatValue.text = details.Con.ToString();
+                details.detailInfo.Con--;
+                StatValue.text = details.detailInfo.Con.ToString();
                 break;
             case "INT":
-                details.Intel--;
-                StatValue.text = details.Intel.ToString();
+                details.detailInfo.Intel--;
+                StatValue.text = details.detailInfo.Intel.ToString();
                 break;
             case "WIS":
-                details.Wis--;
-                StatValue.text = details.Wis.ToString();
+                details.detailInfo.Wis--;
+                StatValue.text = details.detailInfo.Wis.ToString();
                 break;
             case "CHR":
-                details.Chr--;
-                StatValue.text = details.Chr.ToString();
+                details.detailInfo.Chr--;
+                StatValue.text = details.detailInfo.Chr.ToString();
                 break;
             default:
                 break;

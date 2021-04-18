@@ -7,13 +7,15 @@ public class PlayerCharacter : MonoBehaviour, ISelectable
 {
     public GameBoard gameBoard;
     public bool isSelected;
-    static public CharacterDetail detail;
+    public List<CharacterDetail> characterDeck;
+    static public CharacterDetail activeDetail;
     string json;
     
     void Start()
     {
         //SET character detail in code
         //gameObject.layer = 9;
+        characterDeck = new List<CharacterDetail>();
         gameBoard = GetComponentInParent<GameBoard>();
         AssignDetails();
     }
@@ -44,6 +46,6 @@ public class PlayerCharacter : MonoBehaviour, ISelectable
     {
         //Read from JSON
         json = File.ReadAllText("Assets/SaveFiles/CharacterData.artful");
-        detail = JsonUtility.FromJson<CharacterDetail>(json);
+        activeDetail = JsonUtility.FromJson<CharacterDetail>(json);
     }
 }

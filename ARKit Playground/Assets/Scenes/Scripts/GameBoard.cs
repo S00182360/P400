@@ -41,6 +41,8 @@ public class GameBoard : MonoBehaviour
 
     [SerializeField]
     CharacterDetailPannel CharPan;
+    [SerializeField]
+    CharacterDetailManager characterDetailManager;
 
     void Start()
     {
@@ -191,16 +193,16 @@ public class GameBoard : MonoBehaviour
         PLAYERCLASS defineClass = (PLAYERCLASS)Random.Range(1, 12);
         if (newPlayer.TryGetComponent(out CharacterDetail newChar))
         {
-            newChar.Name = "Bardy McBardface";
-            newChar.DefineClass = defineClass;
-            newChar.Class = newChar.DefineClass.ToString();
-            newChar.Str = stats[0];
-            newChar.Dex = stats[1];
-            newChar.Con = stats[2];
-            newChar.Intel = stats[3];
-            newChar.Wis = stats[4];
-            newChar.Chr = stats[5];
-            CharacterDetailStatic.WhiteInfoToJson(newChar);
+            newChar.detailInfo.Name = "Bardy McBardface";
+            newChar.detailInfo.DefineClass = defineClass;
+            newChar.detailInfo.Class = newChar.detailInfo.DefineClass.ToString();
+            newChar.detailInfo.Str = stats[0];
+            newChar.detailInfo.Dex = stats[1];
+            newChar.detailInfo.Con = stats[2];
+            newChar.detailInfo.Intel = stats[3];
+            newChar.detailInfo.Wis = stats[4];
+            newChar.detailInfo.Chr = stats[5];
+            characterDetailManager.WhiteInfoToJson(newChar.detailInfo);
         }
 
         newPlayer.transform.SetParent(transform);

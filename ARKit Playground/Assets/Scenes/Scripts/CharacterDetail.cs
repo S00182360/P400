@@ -10,7 +10,13 @@ public enum PLAYERCLASS { BARBARIAN = 1, BARD = 2, CLERIC = 3, DRUID = 4, FIGHTE
 [Serializable]
 public class CharacterDetail : MonoBehaviour
 {
-    
+    public DetailInfo detailInfo;
+
+}
+
+[Serializable]
+public class DetailInfo
+{
     public string Name;
     public string Class;
     public PLAYERCLASS DefineClass;
@@ -22,7 +28,8 @@ public class CharacterDetail : MonoBehaviour
     public int Chr;
     public static string jsonPath;
 
-    public CharacterDetail(int[] Stats, string name, PLAYERCLASS defineClass)
+
+    public DetailInfo(int[] Stats, string name, PLAYERCLASS defineClass)
     {
         Name = name;
         DefineClass = defineClass;
@@ -37,4 +44,3 @@ public class CharacterDetail : MonoBehaviour
     }
 
 }
-

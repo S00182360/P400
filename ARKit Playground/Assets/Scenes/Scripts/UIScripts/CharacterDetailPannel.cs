@@ -16,7 +16,7 @@ public class CharacterDetailPannel : MonoBehaviour
     public TMP_Text Chr;
     [SerializeField]
     PlayerCharacter CharacterInfo;
-    CharacterDetail details;
+    DetailInfo details;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class CharacterDetailPannel : MonoBehaviour
 
     public void SetDetails()
     {
-        details = CharacterInfo.GetComponent<CharacterDetail>();
+        details = CharacterInfo.GetComponent<CharacterDetail>().detailInfo;
         Name.text = details.Name;
         Str.text = details.Str.ToString();
         Dex.text = details.Dex.ToString();
