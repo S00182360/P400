@@ -207,7 +207,7 @@ public class GameBoard : MonoBehaviour
         newPlayer.SetPosition(pos);
         //CharPan.CharacterInfo = newPlayer;
         CharPan.SetDetails();
-        CharacterDetailStatic.AssignInfoFromJson();
+        //CharacterDetailStatic.ReadInfoFromJson();
     }
 }
 

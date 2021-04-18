@@ -8,7 +8,7 @@ public enum PLAYERCLASS { BARBARIAN = 1, BARD = 2, CLERIC = 3, DRUID = 4, FIGHTE
     WARLOCK = 11, WIZARD = 12, ARTIFICER = 13, BLOODHUNTER = 14}
 
 [Serializable]
-public class CharacterDetail : MonoBehaviour
+public class CharacterDetail 
 {
     
     public string Name;
@@ -36,15 +36,5 @@ public class CharacterDetail : MonoBehaviour
         jsonPath = "Assets/SaveFiles/CharacterData.artful";
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
 

@@ -9,7 +9,8 @@ public class StartPage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        CharacterDetailStatic.OnStartGame();
+        CharacterDetailStatic.InitData();
     }
 
     // Update is called once per frame
