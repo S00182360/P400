@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour, ISelectable
 {
     public GameBoard gameBoard;
     public bool isSelected;
-    public CharacterDetail detail;
+    static public CharacterDetail detail;
+    string json;
     
     void Start()
     {
         //SET character detail in code
         //gameObject.layer = 9;
         gameBoard = GetComponentInParent<GameBoard>();
+        AssignDetails();
     }
 
     public void SetPosition(Vector3 newPos)
@@ -35,5 +38,12 @@ public class PlayerCharacter : MonoBehaviour, ISelectable
         gameBoard.selectedPlayer = this;
         gameBoard.selectedPlayer.UpdateMaterial(gameBoard.ClickedMat);
         gameBoard.selectedPlayer.isSelected = true;
+    }
+
+    public void AssignDetails()
+    {
+        //Read from JSON
+        json = File.ReadAllText("Assets/SaveFiles/CharacterData.artful");
+        detail = JsonUtility.FromJson<CharacterDetail>(json);
     }
 }

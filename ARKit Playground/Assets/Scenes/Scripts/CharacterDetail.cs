@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public enum PLAYERCLASS { BARBARIAN = 1, BARD = 2, CLERIC = 3, DRUID = 4, FIGHTE
     MONK = 6, PALADIN = 7, RANGER = 8, ROGUE = 9, SORCERER = 10,
     WARLOCK = 11, WIZARD = 12, ARTIFICER = 13, BLOODHUNTER = 14}
 
-
+[Serializable]
 public class CharacterDetail : MonoBehaviour
 {
     
@@ -19,6 +20,7 @@ public class CharacterDetail : MonoBehaviour
     public int Intel;
     public int Wis;
     public int Chr;
+    public static string jsonPath;
 
     public CharacterDetail(int[] Stats, string name, PLAYERCLASS defineClass)
     {
@@ -31,6 +33,7 @@ public class CharacterDetail : MonoBehaviour
         Intel = Stats[3];
         Wis = Stats[4];
         Chr = Stats[5];
+        jsonPath = "Assets/SaveFiles/CharacterData.artful";
     }
 
     // Start is called before the first frame update

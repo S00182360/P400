@@ -7,6 +7,12 @@ TagManager:
   - CubeObject
   - Character
   - Tile
+  - DEX
+  - STR
+  - CON
+  - INTEL
+  - WIS
+  - CHR
   layers:
   - Default
   - TransparentFX

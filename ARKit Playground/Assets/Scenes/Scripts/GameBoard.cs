@@ -200,16 +200,16 @@ public class GameBoard : MonoBehaviour
             newChar.Intel = stats[3];
             newChar.Wis = stats[4];
             newChar.Chr = stats[5];
-
+            CharacterDetailStatic.WhiteInfoToJson(newChar);
         }
 
         newPlayer.transform.SetParent(transform);
         newPlayer.SetPosition(pos);
-        CharPan.CharacterInfo = newPlayer;
+        //CharPan.CharacterInfo = newPlayer;
         CharPan.SetDetails();
+        CharacterDetailStatic.AssignInfoFromJson();
     }
 }
-
 
 #region Commented Code
 

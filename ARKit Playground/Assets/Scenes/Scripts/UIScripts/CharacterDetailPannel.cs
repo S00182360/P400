@@ -15,8 +15,9 @@ public class CharacterDetailPannel : MonoBehaviour
     public TMP_Text Wis;
     public TMP_Text Chr;
     [SerializeField]
-    public PlayerCharacter CharacterInfo;
+    PlayerCharacter CharacterInfo;
     CharacterDetail details;
+
     // Start is called before the first frame update
     void Start()
     {
