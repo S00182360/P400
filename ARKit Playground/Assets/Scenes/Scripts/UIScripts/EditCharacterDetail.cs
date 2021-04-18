@@ -7,6 +7,7 @@ public class EditCharacterDetail : MonoBehaviour
 {
     [SerializeField]
     GameObject EditPannel;
+    [SerializeField]
     TMP_Text StatValue;
     [SerializeField]
     PlayerCharacter CharacterInfo;

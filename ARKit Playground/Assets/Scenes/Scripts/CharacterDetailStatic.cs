@@ -17,6 +17,8 @@ public static class CharacterDetailStatic
     //private static int chr;
 
     public static string jsonPath;
+    public static string jsonFile;
+    public static string jsonExtention;
     public static string json;
     public static List<CharacterDetail> characterDetails;
     public static CharacterDetail characterDetail;
@@ -24,6 +26,7 @@ public static class CharacterDetailStatic
     public static PlayerCharacter newPlayer;
     public static CharacterDetail currentCharacter;
     public static CharacterDetail newChar;
+
     //public static string CharacterName { get => characterName; set => characterName = value; }
     //public static string Job { get => job; set => job = value; }
     //public static PLAYERCLASS DefineClass { get => defineClass; set => defineClass = value; }
@@ -37,11 +40,16 @@ public static class CharacterDetailStatic
 
     public static void OnStartGame()
     {
-        jsonPath = "Assets/SaveFile/CharacterData.json";
+        jsonPath = Application.persistentDataPath + "/Assets/SaveFiles";
+        jsonFile = "CharacterDetail";
+        jsonExtention = ".json";
         if (!Directory.Exists(jsonPath))
+        {
             Directory.CreateDirectory(jsonPath);
-        FileStream fs = new FileStream(jsonPath, FileMode.OpenOrCreate);
-
+            File.Create(jsonPath + "CharacterDetail.json");
+        }
+        FileStream file = File.Create(jsonPath + "/" + jsonFile + jsonExtention);
+        file.Close();
         ReadInfoFromJson();
     }
     public static void InitData()
@@ -56,12 +64,15 @@ public static class CharacterDetailStatic
         characterDetails = new List<CharacterDetail>();
         try
         {
-            using (FileStream fs = new FileStream(jsonPath, FileMode.OpenOrCreate))
-            using (StreamReader sr = new StreamReader(fs))
+            using (FileStream fs = File.Create(jsonPath + "/" + jsonFile + "/" + jsonExtention))
             {
+
+                using StreamReader sr = new StreamReader(fs);
+
                 json = sr.ReadToEnd();
                 sr.Close();
                 fs.Close();
+
             }
             
             characterDetails = JsonUtility.FromJson<List<CharacterDetail>>(json);

@@ -9,6 +9,7 @@ public class InfoPanelOpen : MonoBehaviour
 
     private void Start()
     {
+        this.transform.SetAsLastSibling();
         CharInfoPanel.TryGetComponent(out animator);
     }
 

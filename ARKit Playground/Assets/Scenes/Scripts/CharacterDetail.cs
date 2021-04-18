@@ -8,7 +8,7 @@ public enum PLAYERCLASS { BARBARIAN = 1, BARD = 2, CLERIC = 3, DRUID = 4, FIGHTE
     WARLOCK = 11, WIZARD = 12, ARTIFICER = 13, BLOODHUNTER = 14}
 
 [Serializable]
-public class CharacterDetail 
+public class CharacterDetail : MonoBehaviour
 {
     
     public string Name;
@@ -33,7 +33,7 @@ public class CharacterDetail
         Intel = Stats[3];
         Wis = Stats[4];
         Chr = Stats[5];
-        jsonPath = "Assets/SaveFiles/CharacterData.artful";
+        //jsonPath = "Assets/SaveFiles/CharacterData.artful";
     }
 
 }
