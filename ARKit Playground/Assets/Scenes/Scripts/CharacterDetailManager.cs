@@ -12,6 +12,7 @@ public class CharacterDetailManager : MonoBehaviour
     public string jsonExtention;
     public string json;
     public List<DetailInfo> characterDeck;
+    public DetailInfo[] detailInfos;
     public CharacterDetail characterDetail;
     public string jsonSerial;
     public PlayerCharacter newPlayer;
@@ -87,7 +88,11 @@ public class CharacterDetailManager : MonoBehaviour
             }
             if(json.Length > 5)
             {
-                characterDeck = JsonUtility.FromJson<CharacterDeck>(json);
+                detailInfos = JsonHelper.FromJson<DetailInfo>(json);
+                for (int i = 0; i < detailInfos.Length; i++)
+                {
+                    characterDeck.Add(detailInfos[i]);
+                }
             }
 
             for (int i = 0; i < characterDeck.Count; i++)
@@ -109,7 +114,7 @@ public class CharacterDetailManager : MonoBehaviour
         using (FileStream fs = new FileStream(string.Concat(jsonPath, "/", jsonFile, jsonExtention), FileMode.OpenOrCreate, FileAccess.ReadWrite))
         {
             //jsonSerial = JsonUtility.ToJson(characterDetail);
-            jsonSerial = JsonUtility.ToJson(characterDeck);
+            jsonSerial = JsonHelper.ToJson(characterDeck.ToArray(), true);
             Debug.Log(jsonSerial);
             using(StreamWriter sw = new StreamWriter(fs))
             {
