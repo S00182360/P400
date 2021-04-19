@@ -40,7 +40,11 @@ public class DetailInfo
         Intel = Stats[3];
         Wis = Stats[4];
         Chr = Stats[5];
-        //jsonPath = "Assets/SaveFiles/CharacterData.artful";
     }
 
+}
+
+public class CharacterDeck
+{
+    public List<DetailInfo> theDeck;
 }

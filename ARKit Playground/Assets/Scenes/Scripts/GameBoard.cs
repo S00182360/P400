@@ -5,9 +5,6 @@ using UnityEngine.XR.ARFoundation;
 
 public class GameBoard : MonoBehaviour
 {
-    //TODO:
-
-
     public ARRaycastManager aRRaycast;
     private List<ARRaycastHit> aRRayHits;
 
@@ -202,7 +199,7 @@ public class GameBoard : MonoBehaviour
             newChar.detailInfo.Intel = stats[3];
             newChar.detailInfo.Wis = stats[4];
             newChar.detailInfo.Chr = stats[5];
-            characterDetailManager.WhiteInfoToJson(newChar.detailInfo);
+            //characterDetailManager.WhiteInfoToJson(newChar.detailInfo);
         }
 
         newPlayer.transform.SetParent(transform);

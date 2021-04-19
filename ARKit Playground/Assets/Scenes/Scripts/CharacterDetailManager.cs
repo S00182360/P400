@@ -11,14 +11,13 @@ public class CharacterDetailManager : MonoBehaviour
     public string jsonFile;
     public string jsonExtention;
     public string json;
-    public List<DetailInfo> characterDetails;
+    public List<DetailInfo> characterDeck;
     public CharacterDetail characterDetail;
     public string jsonSerial;
     public PlayerCharacter newPlayer;
     public DetailInfo currentCharacter;
     public DetailInfo newChar;
-    [SerializeField]
-    CharacterDetailManager characterDetailManager;
+    
 
     private void Awake()
     {
@@ -26,6 +25,11 @@ public class CharacterDetailManager : MonoBehaviour
     }
     void Start()
     {
+
+        jsonPath = Application.persistentDataPath + "/Assets/SaveFiles";
+        jsonFile = "CharacterDetail";
+        jsonExtention = ".json";
+        characterDeck = new List<DetailInfo>();
         OnStartGame();
         InitData();
     }
@@ -38,11 +42,11 @@ public class CharacterDetailManager : MonoBehaviour
 
     public void OnStartGame()
     {
-        jsonPath = Application.persistentDataPath + "/Assets/SaveFiles";
-        jsonFile = "CharacterDetail";
-        jsonExtention = ".json";
+        Debug.Log("OnStratGame reached");
+
         if (!Directory.Exists(jsonPath))
         {
+            Debug.Log("DIR does not exist");
             Directory.CreateDirectory(jsonPath);
             File.Create(jsonPath + "CharacterDetail.json");
         }
@@ -52,31 +56,42 @@ public class CharacterDetailManager : MonoBehaviour
     }
     public void InitData()
     {
+        Debug.Log("InitData reached");
         CreateCharacter("Bardy McBardface");
+        Debug.Log("Bardy mcbardface done"); 
         CreateCharacter("Paladin Knights");
+        Debug.Log("PaladinKnight done");
         CreateCharacter("Relana Kemari");
+        Debug.Log("Relana done");
+        WriteInfoToJson();
+
     }
 
     public void ReadInfoFromJson()
     {
-        characterDetails = new List<DetailInfo>();
+        Debug.Log("ReadInfoFromJson");
+        characterDeck = new List<DetailInfo>();
         try
         {
+            Debug.Log("ReadInfoFromJson try clause");
             using (FileStream fs = File.Create(jsonPath + "/" + jsonFile + jsonExtention))
             {
-
+                Debug.Log("ReadInfoFromJson FS");
                 using StreamReader sr = new StreamReader(fs);
-
-                json = sr.ReadToEnd();
-                sr.Close();
-                fs.Close();
-
+                {
+                    Debug.Log("ReadInfoFromJson FS -> StreamReader");
+                    json = sr.ReadToEnd();
+                    sr.Close();
+                    fs.Close();
+                }
+            }
+            if(json.Length > 5)
+            {
+                characterDeck = JsonUtility.FromJson<CharacterDeck>(json);
             }
 
-            characterDetails = JsonUtility.FromJson<List<DetailInfo>>(json);
-
-            for (int i = 0; i < characterDetails.Count; i++)
-                Debug.Log(characterDetails[0].Name);
+            for (int i = 0; i < characterDeck.Count; i++)
+                Debug.Log(characterDeck[0].Name);
 
         }
         catch
@@ -84,24 +99,28 @@ public class CharacterDetailManager : MonoBehaviour
             Debug.Log("Exception in CDManager ReadInfoFromJson()");
         }
 
-        characterDetail = JsonUtility.FromJson<CharacterDetail>(json);
+        
     }
 
-    public void WhiteInfoToJson(DetailInfo characterDetail)
+    public void WriteInfoToJson()
     {
+        Debug.Log("WriteInfoToJson reached");
         //Save current info
-        using (FileStream fs = new FileStream(jsonPath, FileMode.OpenOrCreate))
-        using (StreamReader sr = new StreamReader(fs))
+        using (FileStream fs = new FileStream(string.Concat(jsonPath, "/", jsonFile, jsonExtention), FileMode.OpenOrCreate, FileAccess.ReadWrite))
         {
-            json = sr.ReadToEnd();
-            sr.Close();
+            //jsonSerial = JsonUtility.ToJson(characterDetail);
+            jsonSerial = JsonUtility.ToJson(characterDeck);
+            Debug.Log(jsonSerial);
+            using(StreamWriter sw = new StreamWriter(fs))
+            {
+                Debug.Log("Inside StreamWriter");
+                sw.WriteLine(jsonSerial);
+                Debug.Log("After writing");
+            }
             fs.Close();
+            File.WriteAllText(string.Concat(jsonPath, "/", jsonFile, jsonExtention), jsonSerial);
         }
 
-        characterDetails = JsonUtility.FromJson<List<DetailInfo>>(json);
-
-        jsonSerial = JsonUtility.ToJson(characterDetail);
-        File.WriteAllText(jsonPath, jsonSerial);
     }
 
     public void CreateCharacter(string newName)
@@ -123,8 +142,7 @@ public class CharacterDetailManager : MonoBehaviour
         //newChar.Wis = stats[4];
         //newChar.Chr = stats[5];
         //CharacterDetailStatic.WhiteInfoToJson(newChar);
-
-        characterDetailManager.WhiteInfoToJson(newChar);
+        characterDeck.Add(newChar);
     }
 
     public void AddOrUpdateJson(CharacterDetail detail)
@@ -139,7 +157,7 @@ public class CharacterDetailManager : MonoBehaviour
                 fs.Close();
             }
 
-            characterDetails = JsonUtility.FromJson<List<DetailInfo>>(json);
+            characterDeck = JsonUtility.FromJson<List<DetailInfo>>(json);
             JsonUtility.FromJsonOverwrite(jsonSerial, detail);
 
         }
