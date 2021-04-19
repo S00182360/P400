@@ -24,7 +24,7 @@ public class CollabSession : MonoBehaviour
     void DisableNotSupported(string reason)
     {
         enabled = false;
-        //Logger.Log(reason);
+        Debug.Log(reason);
     }
 
     private void OnEnable()

@@ -14424,6 +14424,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SafeFileHandle__ctor_m6E697085DB6452C9CC
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FileStream_Init_m4C714055CD4E897993977EB5373AA27D7C3BCC08 (FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * __this, SafeFileHandle_tC77A9860A03C31DC46AD2C08EC10EACDC3B7A662 * ___safeHandle0, int32_t ___access1, bool ___ownsHandle2, int32_t ___bufferSize3, bool ___isAsync4, bool ___isConsoleWrapper5, const RuntimeMethod* method);
 // System.Void System.IO.FileStream::.ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Boolean,System.IO.FileOptions)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FileStream__ctor_mF6B6EFAE9D68AD3601409E264FAAB53A8557A538 (FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * __this, String_t* ___path0, int32_t ___mode1, int32_t ___access2, int32_t ___share3, int32_t ___bufferSize4, bool ___anonymous5, int32_t ___options6, const RuntimeMethod* method);
+// System.Void System.IO.FileStream::.ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Boolean,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FileStream__ctor_mAC8B4D989CF057B6B12B17EE6C4C816CAB398B82 (FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * __this, String_t* ___path0, int32_t ___mode1, int32_t ___access2, int32_t ___share3, int32_t ___bufferSize4, bool ___isAsync5, bool ___anonymous6, const RuntimeMethod* method);
 // System.Void System.ArgumentOutOfRangeException::.ctor(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentOutOfRangeException__ctor_mE43AFC74F5F3932913C023A04B24905E093C5005 (ArgumentOutOfRangeException_tFAF23713820951D4A09ABBFE5CC091E445A6F3D8 * __this, String_t* ___paramName0, String_t* ___message1, const RuntimeMethod* method);
 // System.String System.IO.Path::InsecureGetFullPath(System.String)
@@ -26821,6 +26823,65 @@ IL_000b:
 		return;
 	}
 }
+// System.Void System.IO.FileStream::.ctor(System.String,System.IO.FileMode,System.IO.FileAccess)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FileStream__ctor_m427E5D4CDC40E0431E91B713C6576F1F3DCC5E8D (FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * __this, String_t* ___path0, int32_t ___mode1, int32_t ___access2, const RuntimeMethod* method)
+{
+	int32_t G_B2_0 = 0;
+	int32_t G_B2_1 = 0;
+	String_t* G_B2_2 = NULL;
+	FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * G_B2_3 = NULL;
+	int32_t G_B1_0 = 0;
+	int32_t G_B1_1 = 0;
+	String_t* G_B1_2 = NULL;
+	FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * G_B1_3 = NULL;
+	int32_t G_B3_0 = 0;
+	int32_t G_B3_1 = 0;
+	int32_t G_B3_2 = 0;
+	String_t* G_B3_3 = NULL;
+	FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * G_B3_4 = NULL;
+	{
+		String_t* L_0 = ___path0;
+		int32_t L_1 = ___mode1;
+		int32_t L_2 = ___access2;
+		int32_t L_3 = ___access2;
+		G_B1_0 = L_2;
+		G_B1_1 = L_1;
+		G_B1_2 = L_0;
+		G_B1_3 = __this;
+		if ((((int32_t)L_3) == ((int32_t)2)))
+		{
+			G_B2_0 = L_2;
+			G_B2_1 = L_1;
+			G_B2_2 = L_0;
+			G_B2_3 = __this;
+			goto IL_000b;
+		}
+	}
+	{
+		G_B3_0 = 1;
+		G_B3_1 = G_B1_0;
+		G_B3_2 = G_B1_1;
+		G_B3_3 = G_B1_2;
+		G_B3_4 = G_B1_3;
+		goto IL_000c;
+	}
+
+IL_000b:
+	{
+		G_B3_0 = 0;
+		G_B3_1 = G_B2_0;
+		G_B3_2 = G_B2_1;
+		G_B3_3 = G_B2_2;
+		G_B3_4 = G_B2_3;
+	}
+
+IL_000c:
+	{
+		NullCheck(G_B3_4);
+		FileStream__ctor_mAC8B4D989CF057B6B12B17EE6C4C816CAB398B82(G_B3_4, G_B3_3, G_B3_2, G_B3_1, G_B3_0, ((int32_t)4096), (bool)0, (bool)0, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void System.IO.FileStream::.ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FileStream__ctor_m3B5FED0863BA31DCF29A27B99FFDCB699626C326 (FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * __this, String_t* ___path0, int32_t ___mode1, int32_t ___access2, int32_t ___share3, const RuntimeMethod* method)
 {
@@ -26857,6 +26918,89 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FileStream__ctor_mA8AB9BCEDDF972CF5DB44B
 		int32_t L_4 = ___bufferSize4;
 		int32_t L_5 = ___options5;
 		FileStream__ctor_mF6B6EFAE9D68AD3601409E264FAAB53A8557A538(__this, L_0, L_1, L_2, L_3, L_4, (bool)0, L_5, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void System.IO.FileStream::.ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Boolean,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FileStream__ctor_mAC8B4D989CF057B6B12B17EE6C4C816CAB398B82 (FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * __this, String_t* ___path0, int32_t ___mode1, int32_t ___access2, int32_t ___share3, int32_t ___bufferSize4, bool ___isAsync5, bool ___anonymous6, const RuntimeMethod* method)
+{
+	bool G_B2_0 = false;
+	int32_t G_B2_1 = 0;
+	int32_t G_B2_2 = 0;
+	int32_t G_B2_3 = 0;
+	int32_t G_B2_4 = 0;
+	String_t* G_B2_5 = NULL;
+	FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * G_B2_6 = NULL;
+	bool G_B1_0 = false;
+	int32_t G_B1_1 = 0;
+	int32_t G_B1_2 = 0;
+	int32_t G_B1_3 = 0;
+	int32_t G_B1_4 = 0;
+	String_t* G_B1_5 = NULL;
+	FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * G_B1_6 = NULL;
+	int32_t G_B3_0 = 0;
+	bool G_B3_1 = false;
+	int32_t G_B3_2 = 0;
+	int32_t G_B3_3 = 0;
+	int32_t G_B3_4 = 0;
+	int32_t G_B3_5 = 0;
+	String_t* G_B3_6 = NULL;
+	FileStream_t6342275F1C1E26F5EEB5AD510933C95B78A5DA26 * G_B3_7 = NULL;
+	{
+		String_t* L_0 = ___path0;
+		int32_t L_1 = ___mode1;
+		int32_t L_2 = ___access2;
+		int32_t L_3 = ___share3;
+		int32_t L_4 = ___bufferSize4;
+		bool L_5 = ___anonymous6;
+		bool L_6 = ___isAsync5;
+		G_B1_0 = L_5;
+		G_B1_1 = L_4;
+		G_B1_2 = L_3;
+		G_B1_3 = L_2;
+		G_B1_4 = L_1;
+		G_B1_5 = L_0;
+		G_B1_6 = __this;
+		if (L_6)
+		{
+			G_B2_0 = L_5;
+			G_B2_1 = L_4;
+			G_B2_2 = L_3;
+			G_B2_3 = L_2;
+			G_B2_4 = L_1;
+			G_B2_5 = L_0;
+			G_B2_6 = __this;
+			goto IL_0011;
+		}
+	}
+	{
+		G_B3_0 = 0;
+		G_B3_1 = G_B1_0;
+		G_B3_2 = G_B1_1;
+		G_B3_3 = G_B1_2;
+		G_B3_4 = G_B1_3;
+		G_B3_5 = G_B1_4;
+		G_B3_6 = G_B1_5;
+		G_B3_7 = G_B1_6;
+		goto IL_0016;
+	}
+
+IL_0011:
+	{
+		G_B3_0 = ((int32_t)1073741824);
+		G_B3_1 = G_B2_0;
+		G_B3_2 = G_B2_1;
+		G_B3_3 = G_B2_2;
+		G_B3_4 = G_B2_3;
+		G_B3_5 = G_B2_4;
+		G_B3_6 = G_B2_5;
+		G_B3_7 = G_B2_6;
+	}
+
+IL_0016:
+	{
+		NullCheck(G_B3_7);
+		FileStream__ctor_mF6B6EFAE9D68AD3601409E264FAAB53A8557A538(G_B3_7, G_B3_6, G_B3_5, G_B3_4, G_B3_3, G_B3_2, G_B3_1, G_B3_0, /*hidden argument*/NULL);
 		return;
 	}
 }

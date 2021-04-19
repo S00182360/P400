@@ -13,6 +13,7 @@ public class EditCharacterDetail : MonoBehaviour
     PlayerCharacter CharacterInfo;
     CharacterDetail details;
     string statTag;
+
     // Start is called before the first frame update
     void Start()
     {

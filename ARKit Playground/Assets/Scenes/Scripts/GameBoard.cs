@@ -8,8 +8,6 @@ public class GameBoard : MonoBehaviour
     public ARRaycastManager aRRaycast;
     private List<ARRaycastHit> aRRayHits;
 
-    //Read board size
-    //generate grid of size (x,y)
     [SerializeField]
     GameObject boardTile;
     [SerializeField]
@@ -46,7 +44,9 @@ public class GameBoard : MonoBehaviour
         isDrawn = false;
         AllTiles = new List<GameObject>();
         aRRayHits = new List<ARRaycastHit>();
-
+        width = Random.Range(1, 20);
+        length = Random.Range(1, 20);
+        characterDetailManager = CharacterDetailManager.instance;
         //arRaycastHits= new List<ARRaycastHit>();
         //StartCoroutine(DrawBoardDelayed(width, length));
         //DrawBoard();

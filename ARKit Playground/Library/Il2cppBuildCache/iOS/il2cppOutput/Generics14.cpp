@@ -542,6 +542,8 @@ struct WhereArrayIterator_1_t7D84D638EB94F5CC3BE1B29D8FC781CA8CD15A86;
 struct WhereEnumerableIterator_1_t1E9FDCFD8F8136C6A5A5740C1E093EF03F0B5CE0;
 // System.Linq.Enumerable/WhereListIterator`1<System.Object>
 struct WhereListIterator_1_t42618389DB998070E03A982D15FA39BCA1DB56BD;
+// JsonHelper/Wrapper`1<System.Object>
+struct Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B;
 // System.Collections.Generic.Dictionary`2/Entry<System.ByteEnum,System.Object>[]
 struct EntryU5BU5D_t9C8A41E6DC6273F72D23AB7694414D25B837B145;
 // System.Collections.Generic.Dictionary`2/Entry<System.Guid,UnityEngine.XR.ARSubsystems.XRReferenceImage>[]
@@ -3821,6 +3823,25 @@ public:
 	{
 		____dict_0 = value;
 		Il2CppCodeGenWriteBarrier((void**)(&____dict_0), (void*)value);
+	}
+};
+
+
+// JsonHelper/Wrapper`1<System.Object>
+struct  Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B  : public RuntimeObject
+{
+public:
+	// T[] JsonHelper/Wrapper`1::Items
+	ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* ___Items_0;
+
+public:
+	inline static int32_t get_offset_of_Items_0() { return static_cast<int32_t>(offsetof(Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B, ___Items_0)); }
+	inline ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* get_Items_0() const { return ___Items_0; }
+	inline ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE** get_address_of_Items_0() { return &___Items_0; }
+	inline void set_Items_0(ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* value)
+	{
+		___Items_0 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___Items_0), (void*)value);
 	}
 };
 
@@ -27163,6 +27184,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* WhereListIterator_1_Where_m1AD
 		WhereListIterator_1_t42618389DB998070E03A982D15FA39BCA1DB56BD * L_4 = (WhereListIterator_1_t42618389DB998070E03A982D15FA39BCA1DB56BD *)il2cpp_codegen_object_new(IL2CPP_RGCTX_DATA(method->klass->rgctx_data, 2));
 		((  void (*) (WhereListIterator_1_t42618389DB998070E03A982D15FA39BCA1DB56BD *, List_1_t3F94120C77410A62EAE48421CF166B83AB95A2F5 *, Func_2_t99409DECFF50F0FA9B427C863AC6C99C66E6F9F8 *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 3)->methodPointer)(L_4, (List_1_t3F94120C77410A62EAE48421CF166B83AB95A2F5 *)L_0, (Func_2_t99409DECFF50F0FA9B427C863AC6C99C66E6F9F8 *)L_3, /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 3));
 		return (RuntimeObject*)L_4;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void JsonHelper/Wrapper`1<System.Object>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Wrapper_1__ctor_m8E7E4554C06C4894975C748EF148D91628A71DF8_gshared (Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B * __this, const RuntimeMethod* method)
+{
+	{
+		NullCheck((RuntimeObject *)__this);
+		Object__ctor_m88880E0413421D13FD95325EDCE231707CE1F405((RuntimeObject *)__this, /*hidden argument*/NULL);
+		return;
 	}
 }
 #ifdef __clang__

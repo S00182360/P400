@@ -5,6 +5,7 @@ using UnityEngine;
 public class EditInfoPanelOpen : MonoBehaviour
 {
     public GameObject EditInfoPanel;
+    public GameObject InfoPanel;
     private Animator animator;
 
     private void Start()
@@ -20,9 +21,7 @@ public class EditInfoPanelOpen : MonoBehaviour
 
             if (animator != null)
             {
-                bool isOpen = animator.GetBool("Open");
-
-                animator.SetBool("Open", !isOpen);
+                animator.SetBool("IsOpen", true);
             }
         }
     }
@@ -37,9 +36,7 @@ public class EditInfoPanelOpen : MonoBehaviour
             
             if (animator != null)
             {
-                bool isOpen = animator.GetBool("Open");
-
-                animator.SetBool("Open", !isOpen);
+                animator.SetBool("IsOpen", false);
             }
         }
     }

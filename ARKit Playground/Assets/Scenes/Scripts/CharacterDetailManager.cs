@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CharacterDetailManager : MonoBehaviour
 {
-
+    public static CharacterDetailManager instance;
     public string jsonPath;
     public string jsonFile;
     public string jsonExtention;
@@ -22,6 +22,7 @@ public class CharacterDetailManager : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
     void Start()
@@ -55,6 +56,7 @@ public class CharacterDetailManager : MonoBehaviour
         file.Close();
         ReadInfoFromJson();
     }
+
     public void InitData()
     {
         Debug.Log("InitData reached");
@@ -170,5 +172,11 @@ public class CharacterDetailManager : MonoBehaviour
         {
             Debug.Log("Exception in CDManager AddOrUpdateJson()");
         }
+    }
+
+    public void SelectPlayerFromName(string name)
+    {
+        currentCharacter = characterDeck.Find(m => m.Name.Equals(name));
+        characterDetail.detailInfo = currentCharacter;
     }
 }

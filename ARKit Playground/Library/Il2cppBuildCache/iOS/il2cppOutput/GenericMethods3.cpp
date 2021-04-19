@@ -2192,6 +2192,25 @@ public:
 };
 
 
+// JsonHelper/Wrapper`1<System.Object>
+struct  Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B  : public RuntimeObject
+{
+public:
+	// T[] JsonHelper/Wrapper`1::Items
+	ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* ___Items_0;
+
+public:
+	inline static int32_t get_offset_of_Items_0() { return static_cast<int32_t>(offsetof(Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B, ___Items_0)); }
+	inline ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* get_Items_0() const { return ___Items_0; }
+	inline ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE** get_address_of_Items_0() { return &___Items_0; }
+	inline void set_Items_0(ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* value)
+	{
+		___Items_0 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___Items_0), (void*)value);
+	}
+};
+
+
 // UnityEngine.EventSystems.AbstractEventData
 struct  AbstractEventData_tA0B5065DE3430C0031ADE061668E1C7073D718DF  : public RuntimeObject
 {
@@ -2687,6 +2706,15 @@ public:
 
 // System.Runtime.CompilerServices.JitHelpers
 struct  JitHelpers_t6DC124FF04E77C7EDE891400F7F01460DB8807E9  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+
+// JsonHelper
+struct  JsonHelper_t6C3440889C2487EBAC7F6E08707670E4CE60DD97  : public RuntimeObject
 {
 public:
 
@@ -23599,6 +23627,10 @@ inline bool InputDevice_CheckValidAndSetDefault_TisVector3_t65B972D6A585A0A5B631
 {
 	return ((  bool (*) (InputDevice_t69B790C68145C769BA3819DE33AA94155C77207E *, Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E *, const RuntimeMethod*))InputDevice_CheckValidAndSetDefault_TisVector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E_m736968F2A46FD02F3CF1C5542C3C8CB343196F3F_gshared)(__this, ___value0, method);
 }
+// System.String UnityEngine.JsonUtility::ToJson(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* JsonUtility_ToJson_mF4F097C9AEC7699970E3E7E99EF8FF2F44DA1B5C (RuntimeObject * ___obj0, const RuntimeMethod* method);
+// System.String UnityEngine.JsonUtility::ToJson(System.Object,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* JsonUtility_ToJson_m624247F6B1FDBD1B02C133B4878E4F3C8CEA30DA (RuntimeObject * ___obj0, bool ___prettyPrint1, const RuntimeMethod* method);
 // System.Object UnityEngine.JsonUtility::FromJson(System.String,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject * JsonUtility_FromJson_m81FC2A7DCB9231E8E201EAD8E160F921B1D2E25C (String_t* ___json0, Type_t * ___type1, const RuntimeMethod* method);
 // System.Boolean System.Boolean::Equals(System.Object)
@@ -23748,8 +23780,6 @@ inline void NativeSlice_1__ctor_m019F776B2B5B7857FB46C64377F7BBE081BDCE4F (Nativ
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mB3D38E5238C3164DB4D7D29339D9E225A4496D17 (String_t* ___format0, RuntimeObject * ___arg01, const RuntimeMethod* method);
 // System.Void UnityEngine.NoAllocHelpers::Internal_ResizeList(System.Object,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NoAllocHelpers_Internal_ResizeList_m32452578286848AD58CF77E1CA6B078492F723F6 (RuntimeObject * ___list0, int32_t ___size1, const RuntimeMethod* method);
-// UnityEngine.Object UnityEngine.Object::FindObjectOfType(System.Type,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Object_tF2F3778131EFF286AF62B7B013A170F95A91571A * Object_FindObjectOfType_mFDEFCE84CE9C644F2B51DCC26CDAC78AC7E89B1B (Type_t * ___type0, bool ___includeInactive1, const RuntimeMethod* method);
 // UnityEngine.Object[] UnityEngine.Object::FindObjectsOfType(System.Type,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_t1256A8B00BB71C7F582BF08257BE4F826FF64873* Object_FindObjectsOfType_m0AEB81CC6F1D224A6F4DCC7D553482D54FC03C5A (Type_t * ___type0, bool ___includeInactive1, const RuntimeMethod* method);
 // System.Void UnityEngine.Object::CheckNullArgument(System.Object,System.String)
@@ -27557,6 +27587,57 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t JitHelpers_UnsafeEnumCast_TisInt32Enu
 		int32_t L_1;
 		L_1 = ((  int32_t (*) (int32_t, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((int32_t)L_0, /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
 		return (int32_t)L_1;
+	}
+}
+// T[] JsonHelper::FromJson<System.Object>(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* JsonHelper_FromJson_TisRuntimeObject_m9EAEE77369AE42100ADFB48FF047C3AC3B9FADDF_gshared (String_t* ___json0, const RuntimeMethod* method)
+{
+	{
+		// Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+		String_t* L_0 = ___json0;
+		Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B * L_1;
+		L_1 = ((  Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B * (*) (String_t*, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((String_t*)L_0, /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
+		// return wrapper.Items;
+		NullCheck(L_1);
+		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_2 = (ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE*)L_1->get_Items_0();
+		return (ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE*)L_2;
+	}
+}
+// System.String JsonHelper::ToJson<System.Object>(T[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* JsonHelper_ToJson_TisRuntimeObject_mA5F5C37F3C74C2EC1518F3BB4E507DE539180E8D_gshared (ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* ___array0, const RuntimeMethod* method)
+{
+	{
+		// Wrapper<T> wrapper = new Wrapper<T>();
+		Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B * L_0 = (Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B *)il2cpp_codegen_object_new(IL2CPP_RGCTX_DATA(method->rgctx_data, 0));
+		((  void (*) (Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(L_0, /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		// wrapper.Items = array;
+		Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B * L_1 = (Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B *)L_0;
+		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_2 = ___array0;
+		NullCheck(L_1);
+		L_1->set_Items_0(L_2);
+		// return JsonUtility.ToJson(wrapper);
+		String_t* L_3;
+		L_3 = JsonUtility_ToJson_mF4F097C9AEC7699970E3E7E99EF8FF2F44DA1B5C((RuntimeObject *)L_1, /*hidden argument*/NULL);
+		return (String_t*)L_3;
+	}
+}
+// System.String JsonHelper::ToJson<System.Object>(T[],System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* JsonHelper_ToJson_TisRuntimeObject_m17A923788AFF9D7B9611C251683F187333A6B410_gshared (ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* ___array0, bool ___prettyPrint1, const RuntimeMethod* method)
+{
+	{
+		// Wrapper<T> wrapper = new Wrapper<T>();
+		Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B * L_0 = (Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B *)il2cpp_codegen_object_new(IL2CPP_RGCTX_DATA(method->rgctx_data, 0));
+		((  void (*) (Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(L_0, /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		// wrapper.Items = array;
+		Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B * L_1 = (Wrapper_1_tF75120B416B2290901FD3D71776F0B9E7E72846B *)L_0;
+		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_2 = ___array0;
+		NullCheck(L_1);
+		L_1->set_Items_0(L_2);
+		// return JsonUtility.ToJson(wrapper, prettyPrint);
+		bool L_3 = ___prettyPrint1;
+		String_t* L_4;
+		L_4 = JsonUtility_ToJson_m624247F6B1FDBD1B02C133B4878E4F3C8CEA30DA((RuntimeObject *)L_1, (bool)L_3, /*hidden argument*/NULL);
+		return (String_t*)L_4;
 	}
 }
 // T UnityEngine.JsonUtility::FromJson<System.Object>(System.String)
@@ -32116,35 +32197,6 @@ IL_0010:
 	{
 		int32_t L_3 = V_0;
 		return (int32_t)L_3;
-	}
-}
-// T UnityEngine.Object::FindObjectOfType<System.Object>()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject * Object_FindObjectOfType_TisRuntimeObject_m25AA6DB6AABFD5D66AFA1A8C0E91A7AF61429C37_gshared (const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Type_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	RuntimeObject * V_0 = NULL;
-	{
-		RuntimeTypeHandle_tC33965ADA3E041E0C94AF05E5CB527B56482CEF9  L_0 = { reinterpret_cast<intptr_t> (IL2CPP_RGCTX_TYPE(method->rgctx_data, 0)) };
-		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
-		Type_t * L_1;
-		L_1 = Type_GetTypeFromHandle_m8BB57524FF7F9DB1803BC561D2B3A4DBACEB385E((RuntimeTypeHandle_tC33965ADA3E041E0C94AF05E5CB527B56482CEF9 )L_0, /*hidden argument*/NULL);
-		IL2CPP_RUNTIME_CLASS_INIT(Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
-		Object_tF2F3778131EFF286AF62B7B013A170F95A91571A * L_2;
-		L_2 = Object_FindObjectOfType_mFDEFCE84CE9C644F2B51DCC26CDAC78AC7E89B1B((Type_t *)L_1, (bool)0, /*hidden argument*/NULL);
-		V_0 = (RuntimeObject *)((RuntimeObject *)Castclass((RuntimeObject*)L_2, IL2CPP_RGCTX_DATA(method->rgctx_data, 1)));
-		goto IL_0019;
-	}
-
-IL_0019:
-	{
-		RuntimeObject * L_3 = V_0;
-		return (RuntimeObject *)L_3;
 	}
 }
 // T[] UnityEngine.Object::FindObjectsOfType<System.Object>()
