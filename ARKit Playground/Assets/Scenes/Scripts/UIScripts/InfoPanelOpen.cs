@@ -5,25 +5,32 @@ using UnityEngine;
 public class InfoPanelOpen : MonoBehaviour
 {
     public GameObject CharInfoPanel;
-    private Animator animator;
+    public GameObject EditInfoPanel;
+    private Animator InfoAnimator;
+    private Animator EditAnimator;
+    public CharacterDetailPannel UIControl;
 
     private void Start()
     {
-        this.transform.SetAsLastSibling();
-        CharInfoPanel.TryGetComponent(out animator);
+        transform.SetAsLastSibling();
+        CharInfoPanel.TryGetComponent(out InfoAnimator);
+        EditInfoPanel.TryGetComponent(out EditAnimator);
+        UIControl.SetDetails();
     }
 
     public void ShowPanel()
     {
+        CharInfoPanel.SetActive(true);
+        EditInfoPanel.SetActive(true);
         if(CharInfoPanel != null)
         {
             CharInfoPanel.SetActive(true);
 
-            if (animator != null)
+            if (InfoAnimator != null && EditAnimator != null)
             {
-                bool isOpen = animator.GetBool("Open");
-
-                animator.SetBool("Open", !isOpen);
+                bool isOpen = InfoAnimator.GetBool("Open");
+                InfoAnimator.SetBool("Open", !isOpen);
+                EditAnimator.SetBool("IsOpen", false);
             }
         }
     }

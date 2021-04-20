@@ -44,6 +44,7 @@ public class DetailInfo
 
 }
 
+[SerializeField]
 public class CharacterDeck
 {
     public List<DetailInfo> theDeck;

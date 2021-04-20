@@ -141,7 +141,7 @@ public class GameBoard : MonoBehaviour
                 spawnedTile.GridPos.y = z;
             }
         }
-        CreatePlayer(new Vector3(0, 0, 0));
+        //CreatePlayer(new Vector3(0, 0, 0));
     }
 
     public Tile GetSelectedTile()
@@ -181,36 +181,36 @@ public class GameBoard : MonoBehaviour
         }
     }
 
-    private void CreatePlayer(Vector3 pos)
-    {
-        PlayerCharacter newPlayer = Instantiate(player, transform.position, Quaternion.identity);
-        int[] stats = new int[6];
-        for (int i = 0; i < stats.Length; i++)
-            stats[i] = Random.Range(1, 10);
-        PLAYERCLASS defineClass = (PLAYERCLASS)Random.Range(1, 12);
-        if (newPlayer.TryGetComponent(out CharacterDetail newChar))
-        {
-            newChar.detailInfo.Name = "Bardy McBardface";
-            newChar.detailInfo.DefineClass = defineClass;
-            newChar.detailInfo.Class = newChar.detailInfo.DefineClass.ToString();
-            newChar.detailInfo.Str = stats[0];
-            newChar.detailInfo.Dex = stats[1];
-            newChar.detailInfo.Con = stats[2];
-            newChar.detailInfo.Intel = stats[3];
-            newChar.detailInfo.Wis = stats[4];
-            newChar.detailInfo.Chr = stats[5];
-            //characterDetailManager.WhiteInfoToJson(newChar.detailInfo);
-        }
-
-        newPlayer.transform.SetParent(transform);
-        newPlayer.SetPosition(pos);
-        //CharPan.CharacterInfo = newPlayer;
-        CharPan.SetDetails();
-        //CharacterDetailStatic.ReadInfoFromJson();
-    }
 }
 
 #region Commented Code
+    //private void CreatePlayer(Vector3 pos)
+    //{
+    //    PlayerCharacter newPlayer = Instantiate(player, transform.position, Quaternion.identity);
+    //    int[] stats = new int[6];
+    //    for (int i = 0; i < stats.Length; i++)
+    //        stats[i] = Random.Range(1, 10);
+    //    PLAYERCLASS defineClass = (PLAYERCLASS)Random.Range(1, 12);
+    //    if (newPlayer.currentCharacter != null)
+    //    {
+    //        newChar.detailInfo.Name = "Bardy McBardface";
+    //        newChar.detailInfo.DefineClass = defineClass;
+    //        newChar.detailInfo.Class = newChar.detailInfo.DefineClass.ToString();
+    //        newChar.detailInfo.Str = stats[0];
+    //        newChar.detailInfo.Dex = stats[1];
+    //        newChar.detailInfo.Con = stats[2];
+    //        newChar.detailInfo.Intel = stats[3];
+    //        newChar.detailInfo.Wis = stats[4];
+    //        newChar.detailInfo.Chr = stats[5];
+    //        //characterDetailManager.WhiteInfoToJson(newChar.detailInfo);
+    //    }
+
+    //    newPlayer.transform.SetParent(transform);
+    //    newPlayer.SetPosition(pos);
+    //    //CharPan.CharacterInfo = newPlayer;
+    //    CharPan.SetDetails();
+    //    //CharacterDetailStatic.ReadInfoFromJson();
+    //}
 
 //UPDATE
 //if (Input.touchCount > 0)

@@ -34,13 +34,13 @@ public class CharacterDetailManager : MonoBehaviour
         characterDeck = new List<DetailInfo>();
         OnStartGame();
         InitData();
+        currentCharacter = characterDeck[0];
+        DebugCheckingList();
+
+        Debug.Log(string.Concat("Current character detail:\t", currentCharacter.Name));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 
     public void OnStartGame()
     {
@@ -55,6 +55,11 @@ public class CharacterDetailManager : MonoBehaviour
         FileStream file = File.Create(jsonPath + "/" + jsonFile + jsonExtention);
         file.Close();
         ReadInfoFromJson();
+
+        foreach (var item in characterDeck)
+        {
+            Debug.Log(item);
+        }
     }
 
     public void InitData()
@@ -139,32 +144,13 @@ public class CharacterDetailManager : MonoBehaviour
 
         PLAYERCLASS defineClass = (PLAYERCLASS)UnityEngine.Random.Range(1, 12);
         newChar = new DetailInfo(stats, newName, defineClass);
-        //newChar.Name = newName;
-        //newChar.DefineClass = defineClass;
-        //newChar.Class = newChar.DefineClass.ToString();
-        //newChar.Str = stats[0];
-        //newChar.Dex = stats[1];
-        //newChar.Con = stats[2];
-        //newChar.Intel = stats[3];
-        //newChar.Wis = stats[4];
-        //newChar.Chr = stats[5];
-        //CharacterDetailStatic.WhiteInfoToJson(newChar);
         characterDeck.Add(newChar);
     }
 
-    public void AddOrUpdateJson(CharacterDetail detail)
+    public void AddOrUpdateJson(DetailInfo detail)
     {
         try
         {
-            using (FileStream fs = new FileStream(jsonPath, FileMode.OpenOrCreate))
-            using (StreamReader sr = new StreamReader(fs))
-            {
-                json = sr.ReadToEnd();
-                sr.Close();
-                fs.Close();
-            }
-
-            characterDeck = JsonUtility.FromJson<List<DetailInfo>>(json);
             JsonUtility.FromJsonOverwrite(jsonSerial, detail);
 
         }
@@ -176,7 +162,17 @@ public class CharacterDetailManager : MonoBehaviour
 
     public void SelectPlayerFromName(string name)
     {
-        currentCharacter = characterDeck.Find(m => m.Name.Equals(name));
-        characterDetail.detailInfo = currentCharacter;
+        characterDetail.detailInfo = characterDeck.Find(m => m.Name.Equals(name));
+        if (characterDetail.detailInfo == null)
+            Debug.Log("characterDetail.detailInfo is null - CharacterDetailManager.SelectPlayerFromName");
+    }
+
+    private void DebugCheckingList()
+    {
+        Debug.Log("DebugCheckingList() enter");
+        foreach (var item in characterDeck)
+        {
+            Debug.Log(item.Name);
+        }
     }
 }

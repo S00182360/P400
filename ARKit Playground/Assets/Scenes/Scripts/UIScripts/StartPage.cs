@@ -5,21 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class StartPage : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void GoToGameScene()
     {
         SceneManager.LoadScene("Sceb");
+    }
+
+    public void GoToCharacterConfig()
+    {
+        SceneManager.LoadScene("CharacterConfig");
+    }
+
+    public void GoToStartPage()
+    {
+        SceneManager.LoadScene("StartPage");
     }
 }

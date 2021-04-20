@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sceb.unity
     guid: 5b8006413dcf945f89004f4a6f804eaf
+  - enabled: 1
+    path: Assets/Scenes/CharacterConfig.unity
+    guid: 6f3f39319000746b483bff58af7f51d0
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 0a68da03b34ea4f80a13e9e214e9d275,
       type: 2}
