@@ -6,10 +6,10 @@ ScriptsOnlyBuild:
     - CharacterDetailPannel
     - CollabSession
     - EditCharacterDetail
+    - EditInfoPanelOpen
     - GameBoard
     - GridManager
     - HelpButton
-    - InAppBrowserBridge
     - InfoPanelOpen
     - InputManager
     - PlayerCharacter
@@ -19,13 +19,12 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_ColorGradient
+    - TMPro.TMP_Dropdown
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    Unity.XR.ARCore.Editor.dll:
-    - UnityEditor.XR.ARCore.ARCoreSettings
     Unity.XR.ARFoundation.dll:
     - UnityEngine.XR.ARFoundation.ARAnchor
     - UnityEngine.XR.ARFoundation.ARCameraBackground
@@ -66,7 +65,77 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Toggle
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
+    Assets/Scenes/CharacterConfig.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1510}
+    - Class: 114
+      Script: {instanceID: 1676}
+    - Class: 114
+      Script: {instanceID: 1822}
+    - Class: 114
+      Script: {instanceID: 2446}
+    - Class: 114
+      Script: {instanceID: 2554}
+    - Class: 114
+      Script: {instanceID: 2566}
+    - Class: 114
+      Script: {instanceID: 2604}
+    - Class: 114
+      Script: {instanceID: 2730}
+    - Class: 114
+      Script: {instanceID: 2938}
+    - Class: 114
+      Script: {instanceID: 2948}
+    - Class: 114
+      Script: {instanceID: 3052}
+    - Class: 114
+      Script: {instanceID: 3864}
+    - Class: 114
+      Script: {instanceID: 4020}
+    - Class: 114
+      Script: {instanceID: 4370}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Sceb.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -117,6 +186,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1974}
     - Class: 114
+      Script: {instanceID: 2220}
+    - Class: 114
       Script: {instanceID: 2276}
     - Class: 114
       Script: {instanceID: 2432}
@@ -153,17 +224,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3754}
     - Class: 114
-      Script: {instanceID: 3958}
+      Script: {instanceID: 3956}
     - Class: 114
-      Script: {instanceID: 4126}
+      Script: {instanceID: 4122}
     - Class: 114
-      Script: {instanceID: 4402}
+      Script: {instanceID: 4398}
     - Class: 114
-      Script: {instanceID: 4486}
+      Script: {instanceID: 4482}
     - Class: 114
-      Script: {instanceID: 4578}
+      Script: {instanceID: 4574}
     - Class: 114
-      Script: {instanceID: 4776}
+      Script: {instanceID: 4772}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -226,15 +297,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 4006}
+      Script: {instanceID: 3352}
     - Class: 114
-      Script: {instanceID: 4104}
+      Script: {instanceID: 4004}
     - Class: 114
-      Script: {instanceID: 4220}
+      Script: {instanceID: 4100}
     - Class: 114
-      Script: {instanceID: 4374}
+      Script: {instanceID: 4218}
     - Class: 114
-      Script: {instanceID: 4396}
+      Script: {instanceID: 4370}
+    - Class: 114
+      Script: {instanceID: 4392}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -452,7 +525,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 02436fc10072c8fed1d63e73a2113441
+      Hash: c267bcfc789bcae76860f30c98530899
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EditInfoPanelOpen
@@ -488,7 +561,7 @@ ScriptsOnlyBuild:
     className: EnumerableTestState
   - hash:
       serializedVersion: 2
-      Hash: 84889478cd64531c2d61c2a836adff26
+      Hash: 9fec95f399f95f54c69c3b9b0738ff73
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InfoPanelOpen
@@ -644,7 +717,7 @@ ScriptsOnlyBuild:
     className: AROcclusionManager
   - hash:
       serializedVersion: 2
-      Hash: bbc17aefd9244728fdf3763b31d58925
+      Hash: cead4f6fb7ab1478bc47071b0bb61ab5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerCharacter
@@ -986,7 +1059,7 @@ ScriptsOnlyBuild:
     className: ARKitLoader
   - hash:
       serializedVersion: 2
-      Hash: 8b414c227df7cad6ae8a56cbcbe47687
+      Hash: 3e5ebf78ce1e8d3456ef4e00e4819459
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CharacterDetailPannel
@@ -1110,6 +1183,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: ARTrackedObjectManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CharConfigContentManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1324,4 +1403,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/StartPage.unity
   - Assets/Scenes/Sceb.unity
+  - Assets/Scenes/CharacterConfig.unity
   playerPath: /Users/samuelcolvillerea/Documents/P400/ARKit Playground/ARTfulRpg
