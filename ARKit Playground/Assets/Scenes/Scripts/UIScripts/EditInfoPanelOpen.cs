@@ -6,10 +6,11 @@ public class EditInfoPanelOpen : MonoBehaviour
 {
     public GameObject EditInfoPanel;
     public GameObject CharInfoPanel;
+    public CharacterDetailPannel pannel;
     private Animator InfoAnimator;
     private Animator EditAnimator; 
     private DetailInfo detail;
-    public CharacterDetailPannel characterDetailPannel;
+    //public CharacterDetailPannel characterDetailPannel;
 
     private void Start()
     {
@@ -45,12 +46,14 @@ public class EditInfoPanelOpen : MonoBehaviour
 
     public void SaveAndClose()
     {
-        detail = CharacterDetailManager.instance.currentCharacter;
+        //detail = CharacterDetailManager.instance.currentCharacter;
+        //CharacterDetailManager.instance.AddOrUpdateJson();
 
         if (EditInfoPanel.activeSelf)
         {
             EditInfoPanel.SetActive(false);
             CharInfoPanel.SetActive(true);
+            pannel.SetDetails();
         }
         //if (EditInfoPanel != null)
         //{

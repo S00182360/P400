@@ -35,6 +35,7 @@ public class CharacterDetailPannel : MonoBehaviour
 
     public void SetDetails()
     {
+        CharacterInfo = CharacterDetailManager.instance.currentCharacter;
         details = CharacterInfo;
         Name.text = details.Name;
         Str.text = details.Str.ToString();
@@ -52,9 +53,5 @@ public class CharacterDetailPannel : MonoBehaviour
         EditWis.text = details.Wis.ToString();
         EditChr.text = details.Chr.ToString();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

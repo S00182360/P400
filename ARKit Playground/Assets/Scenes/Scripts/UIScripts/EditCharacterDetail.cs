@@ -9,37 +9,34 @@ public class EditCharacterDetail : MonoBehaviour
     GameObject EditPannel;
     [SerializeField]
     TMP_Text StatValue;
-    DetailInfo details;
-
 
     public void AddOne()
     {
-        details = CharacterDetailManager.instance.currentCharacter;
         switch (gameObject.tag)
         {
             case "STR":
-                details.Str++;
-                StatValue.text = details.Str.ToString();
+                CharacterDetailManager.instance.currentCharacter.Str++;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Str.ToString();
                 break;
             case "DEX":
-                details.Dex++;
-                StatValue.text = details.Dex.ToString();
+                CharacterDetailManager.instance.currentCharacter.Dex++;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Dex.ToString();
                 break;
             case "CON":
-                details.Con++;
-                StatValue.text = details.Con.ToString();
+                CharacterDetailManager.instance.currentCharacter.Con++;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Con.ToString();
                 break;
             case "INTEL":
-                details.Intel++;
-                StatValue.text = details.Intel.ToString();
+                CharacterDetailManager.instance.currentCharacter.Intel++;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Intel.ToString();
                 break;
             case "WIS":
-                details.Wis++;
-                StatValue.text = details.Wis.ToString();
+                CharacterDetailManager.instance.currentCharacter.Wis++;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Wis.ToString();
                 break;
             case "CHR":
-                details.Chr++;
-                StatValue.text = details.Chr.ToString();
+                CharacterDetailManager.instance.currentCharacter.Chr++;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Chr.ToString();
                 break;
             default:
                 break;
@@ -48,40 +45,34 @@ public class EditCharacterDetail : MonoBehaviour
 
     public void TakeOne()
     {
-        details = CharacterDetailManager.instance.currentCharacter;
         switch (gameObject.tag)
         {
             case "STR":
-                details.Str--;
-                StatValue.text = details.Str.ToString();
+                CharacterDetailManager.instance.currentCharacter.Str--;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Str.ToString();
                 break;
             case "DEX":
-                details.Dex--;
-                StatValue.text = details.Dex.ToString();
+                CharacterDetailManager.instance.currentCharacter.Dex--;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Dex.ToString();
                 break;
             case "CON":
-                details.Con--;
-                StatValue.text = details.Con.ToString();
+                CharacterDetailManager.instance.currentCharacter.Con--;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Con.ToString();
                 break;
             case "INT":
-                details.Intel--;
-                StatValue.text = details.Intel.ToString();
+                CharacterDetailManager.instance.currentCharacter.Intel--;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Intel.ToString();
                 break;
             case "WIS":
-                details.Wis--;
-                StatValue.text = details.Wis.ToString();
+                CharacterDetailManager.instance.currentCharacter.Wis--;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Wis.ToString();
                 break;
             case "CHR":
-                details.Chr--;
-                StatValue.text = details.Chr.ToString();
+                CharacterDetailManager.instance.currentCharacter.Chr--;
+                StatValue.text = CharacterDetailManager.instance.currentCharacter.Chr.ToString();
                 break;
             default:
                 break;
         }
-    }
-
-    public void SaveAndClose()
-    {
-
     }
 }

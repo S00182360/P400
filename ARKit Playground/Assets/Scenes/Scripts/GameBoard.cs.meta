@@ -3,7 +3,20 @@ guid: 6fe47549ca55145c486defbef738e538
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - aRRaycast: {instanceID: 0}
+  - ClickedMat: {instanceID: 0}
+  - UnclickedMat: {instanceID: 0}
+  - arCamera: {instanceID: 0}
+  - tile: {fileID: 1644779197130985767, guid: b2f8f5f3be3d94cceb9c59ae216c85c9, type: 3}
+  - player: {fileID: 8362577886743608864, guid: dc67cb1230f8e43bfa4f521f44dcaab5,
+      type: 3}
+  - PlayerObjPrefab: {instanceID: 0}
+  - TileObjPrefab: {instanceID: 0}
+  - selectedTile: {instanceID: 0}
+  - selectedPlayer: {instanceID: 0}
+  - CharPan: {instanceID: 0}
+  - characterDetailManager: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -5,6 +5,9 @@ ScriptsOnlyBuild:
     - CharacterDetailManager
     - CharacterDetailPannel
     - CollabSession
+    - DiceRoll
+    - DiceRollPanelControl
+    - DropdownControl
     - EditCharacterDetail
     - EditInfoPanelOpen
     - GameBoard
@@ -101,6 +104,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1822}
     - Class: 114
+      Script: {instanceID: 1974}
+    - Class: 114
       Script: {instanceID: 2446}
     - Class: 114
       Script: {instanceID: 2554}
@@ -122,6 +127,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4020}
     - Class: 114
       Script: {instanceID: 4370}
+    - Class: 114
+      Script: {instanceID: 43310}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -237,6 +244,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4574}
     - Class: 114
       Script: {instanceID: 4772}
+    - Class: 114
+      Script: {instanceID: 37180}
+    - Class: 114
+      Script: {instanceID: 37860}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -527,7 +538,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: bfe3ef4e70b6cee79437e4936edbc0c9
+      Hash: 3172654d0951d01a32a41d6cbcd46bf2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EditInfoPanelOpen
@@ -1373,7 +1384,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 114e1307085881ebeebe997d94d80750
+      Hash: a37685238c5cd67fd0da5dd888e0b946
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameBoard
@@ -1401,6 +1412,24 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextEventCheck
+  - hash:
+      serializedVersion: 2
+      Hash: 632672e2113bd44f11c5103b874bc869
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DiceRoll
+  - hash:
+      serializedVersion: 2
+      Hash: ce58067c05629e10d348e5d65015bef8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DiceRollPanelControl
+  - hash:
+      serializedVersion: 2
+      Hash: 8d581cfe66b3d86e8880ac7bed330aed
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DropdownControl
   platform: 9
   scenePathNames:
   - Assets/Scenes/StartPage.unity

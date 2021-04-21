@@ -13,6 +13,8 @@ public class InfoPanelOpen : MonoBehaviour
     private void Start()
     {
         transform.SetAsLastSibling();
+        CharInfoPanel.SetActive(false);
+        EditInfoPanel.SetActive(false);
         CharInfoPanel.TryGetComponent(out InfoAnimator);
         EditInfoPanel.TryGetComponent(out EditAnimator);
         UIControl.SetDetails();

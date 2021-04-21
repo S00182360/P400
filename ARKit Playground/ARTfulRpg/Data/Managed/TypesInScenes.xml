@@ -55,6 +55,9 @@
 		<type fullname="CharacterDetailManager" preserve="nothing"/>
 		<type fullname="CharacterDetailPannel" preserve="nothing"/>
 		<type fullname="CollabSession" preserve="nothing"/>
+		<type fullname="DiceRoll" preserve="nothing"/>
+		<type fullname="DiceRollPanelControl" preserve="nothing"/>
+		<type fullname="DropdownControl" preserve="nothing"/>
 		<type fullname="EditCharacterDetail" preserve="nothing"/>
 		<type fullname="EditInfoPanelOpen" preserve="nothing"/>
 		<type fullname="GameBoard" preserve="nothing"/>

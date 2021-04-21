@@ -45,7 +45,8 @@ public class PlayerCharacter : MonoBehaviour, ISelectable
     public void AssignDetails()
     {
         //Read from JSON
-        json = File.ReadAllText("Assets/SaveFiles/CharacterDetail.json");
-        currentCharacter = JsonUtility.FromJson<DetailInfo>(json);
+        //json = File.ReadAllText("Assets/SaveFiles/CharacterDetail.json");
+        //currentCharacter = JsonUtility.FromJson<DetailInfo>(json);
+        currentCharacter = CharacterDetailManager.instance.currentCharacter;
     }
 }
