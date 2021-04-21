@@ -20,18 +20,27 @@ public class InfoPanelOpen : MonoBehaviour
 
     public void ShowPanel()
     {
-        CharInfoPanel.SetActive(true);
-        EditInfoPanel.SetActive(true);
-        if(CharInfoPanel != null)
+        if (!CharInfoPanel.activeSelf)
         {
             CharInfoPanel.SetActive(true);
-
-            if (InfoAnimator != null && EditAnimator != null)
-            {
-                bool isOpen = InfoAnimator.GetBool("Open");
-                InfoAnimator.SetBool("Open", !isOpen);
-                EditAnimator.SetBool("IsOpen", false);
-            }
+            EditInfoPanel.SetActive(false);
         }
+        else if (CharInfoPanel.activeSelf)
+        {
+            CharInfoPanel.SetActive(false);
+            EditInfoPanel.SetActive(false);
+        }
+
+        //if(CharInfoPanel != null)
+        //{
+        //    CharInfoPanel.SetActive(true);
+
+        //    if (InfoAnimator != null && EditAnimator != null)
+        //    {
+        //        bool isOpen = InfoAnimator.GetBool("Open");
+        //        InfoAnimator.SetBool("Open", !isOpen);
+        //        EditAnimator.SetBool("IsOpen", false);
+        //    }
+        //}
     }
 }

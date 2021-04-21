@@ -49,8 +49,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -525,7 +527,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: c267bcfc789bcae76860f30c98530899
+      Hash: bfe3ef4e70b6cee79437e4936edbc0c9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EditInfoPanelOpen
@@ -729,7 +731,7 @@ ScriptsOnlyBuild:
     className: TestObject
   - hash:
       serializedVersion: 2
-      Hash: 3c0c389c0c83f4219761888552d868ec
+      Hash: 72058590ac904755a4585d8788ba3dbe
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EditCharacterDetail
@@ -1371,7 +1373,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: ba89c634fdabbd73b1d4bb31a26c0b4a
+      Hash: 114e1307085881ebeebe997d94d80750
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameBoard

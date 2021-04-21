@@ -14,9 +14,11 @@ public class GameBoard : MonoBehaviour
     List<GameObject> AllTiles;
     public bool isDrawn;
     [SerializeField]
-    int width;
+    float width;
     [SerializeField]
-    int length;
+    float length;
+    [SerializeField]
+    float scale;
 
     [SerializeField]
     public Material ClickedMat;
@@ -38,6 +40,7 @@ public class GameBoard : MonoBehaviour
     CharacterDetailPannel CharPan;
     [SerializeField]
     CharacterDetailManager characterDetailManager;
+    Collider boxCollider;
 
     void Start()
     {
@@ -47,6 +50,7 @@ public class GameBoard : MonoBehaviour
         width = Random.Range(1, 20);
         length = Random.Range(1, 20);
         characterDetailManager = CharacterDetailManager.instance;
+        boxCollider = GetComponent<Collider>();
         //arRaycastHits= new List<ARRaycastHit>();
         //StartCoroutine(DrawBoardDelayed(width, length));
         //DrawBoard();
@@ -107,7 +111,7 @@ public class GameBoard : MonoBehaviour
                                     touchObj.GetComponent<ISelectable>().Select();
 
                             }
-                            else if (touchObj.CompareTag("Player Token"))
+                            else if (touchObj.CompareTag("Character"))
                             {
                                 if (GetSelectedPlayer() && GetSelectedPlayer().isSelected)
                                     GetSelectedPlayer().isSelected = !GetSelectedPlayer().isSelected;
@@ -130,15 +134,15 @@ public class GameBoard : MonoBehaviour
         //new Vector3(x, 0, z)
         for (int x = 0; x < width; x++)
         {
-
             for (int z = 0; z < length; z++)
             {
-                //currentPos
                 Tile spawnedTile = Instantiate(tile, currentPos, Quaternion.identity);
                 spawnedTile.transform.SetParent(transform);
                 spawnedTile.name = string.Concat(x.ToString(), " , ", z.ToString());
                 spawnedTile.GridPos.x = x;
                 spawnedTile.GridPos.y = z;
+                currentPos.x = startPos.x + (boxCollider.bounds.size.x * x);
+                currentPos.z = startPos.z + (boxCollider.bounds.size.z * z);
             }
         }
         //CreatePlayer(new Vector3(0, 0, 0));

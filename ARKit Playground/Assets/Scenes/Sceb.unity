@@ -405,7 +405,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 1302976728}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &124275025
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +619,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 1388795702}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &156720523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,7 +1035,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 1388795702}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &388727971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 684378846}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &435311463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,7 +1965,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 922409961}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &637824763
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,6 +2109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditInfoPanel: {fileID: 1276658513}
   InfoPanel: {fileID: 504842967}
+  characterDetailPannel: {fileID: 277796096}
 --- !u!114 &661976580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2490,7 +2486,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 1302976728}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &719027367
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,7 +3263,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 684378846}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &915627428
 GameObject:
   m_ObjectHideFlags: 0
@@ -5948,6 +5942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditInfoPanel: {fileID: 1276658513}
   InfoPanel: {fileID: 504842967}
+  characterDetailPannel: {fileID: 0}
 --- !u!1 &1332297437
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,7 +6091,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 589065369}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &1370408598
 GameObject:
   m_ObjectHideFlags: 0
@@ -6915,7 +6909,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 922409961}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &1494693789
 GameObject:
   m_ObjectHideFlags: 0
@@ -8378,7 +8371,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 1020327643}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &1901538818
 GameObject:
   m_ObjectHideFlags: 0
@@ -9197,7 +9189,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 1020327643}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &2045642541
 GameObject:
   m_ObjectHideFlags: 0
@@ -9346,7 +9337,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditPannel: {fileID: 1276658513}
   StatValue: {fileID: 589065369}
-  CharacterInfo: {fileID: 0}
 --- !u!1 &2072592226
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,6 @@ public class EditCharacterDetail : MonoBehaviour
     GameObject EditPannel;
     [SerializeField]
     TMP_Text StatValue;
-    [SerializeField]
-    PlayerCharacter CharacterInfo;
     DetailInfo details;
 
 
@@ -80,5 +78,10 @@ public class EditCharacterDetail : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void SaveAndClose()
+    {
+
     }
 }

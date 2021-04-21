@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1900160098010602543}
   - component: {fileID: 1900160098010602544}
   - component: {fileID: 8362577886743608864}
+  - component: {fileID: -4582375070370148725}
   m_Layer: 0
   m_Name: Character
   m_TagString: Character
@@ -58,6 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -82,6 +84,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &1900160098010602543
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -108,15 +111,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b643d736458749dfbb1386175924fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  Class: 
-  DefineClass: 0
-  Str: 0
-  Dex: 0
-  Con: 0
-  Intel: 0
-  Wis: 0
-  Chr: 0
+  detailInfo:
+    Name: 
+    Class: 
+    DefineClass: 0
+    Str: 0
+    Dex: 0
+    Con: 0
+    Intel: 0
+    Wis: 0
+    Chr: 0
 --- !u!114 &8362577886743608864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,4 +135,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameBoard: {fileID: 0}
   isSelected: 0
-  detail: {fileID: 0}
+  characterDeck: []
+  currentCharacter:
+    Name: 
+    Class: 
+    DefineClass: 0
+    Str: 0
+    Dex: 0
+    Con: 0
+    Intel: 0
+    Wis: 0
+    Chr: 0
+--- !u!114 &-4582375070370148725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900160098010602545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb898793194e03f4bb10dba03ec2cb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DestroyOnRemoval: 1
